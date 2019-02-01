@@ -1,0 +1,98 @@
+body,html{
+    background: rgb(245, 245, 245);
+    min-height: 100%;
+    width: 100%;
+}
+div#root, main{
+    min-height: 100%;
+}
+.card-head {
+    background-color: #472864 !important;
+    flex-flow: row !important;
+    padding: 30px 10px;
+    margin-bottom: 100px;
+}
+
+.username{
+    font-size: 16px;
+    font-weight: 900;
+    color: #fff;
+    clear:both;
+}
+.usertitle{
+    font-size: 11px;
+    font-weight: 600;
+    color: #b1b3c9;
+}
+.flex-column{
+    flex-flow: column;
+    clear:both;
+}
+li{
+    border: none !important;
+}
+li a{
+    color: #472864 !important;
+    font-weight: 900;
+    font-size: 16px;
+}
+.circle{
+    border-radius:50% !important;
+    padding: 12px !important;
+    flex-direction: row;
+}
+.font-bg{
+    font-size: 35px;
+    color: #472864;
+}
+.acc-figure{
+    color: #472864;
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1
+}
+.acc-label{
+    color: rgb(107, 123, 136);
+    font-size: .7rem;
+    font-weight: 900;
+    line-height: 1
+}
+.table-tab{
+    margin-top: 30px;
+}
+.table-toggle{
+    background: #fff;
+    color: #472864;
+    font-size: 16px;
+}
+.floatBTN{
+    background-color: #fbcf20 !important;
+    color: #000;
+    border-radius: 50% !important;
+    position: fixed;
+    top: 90%;
+    left: 90%;
+    padding: 40px;
+}
+.add-page{
+    background-color: #472864 !important;
+    float: right;
+    font-size: 10px;
+    color: #fbcf20 !important;
+    width: 100px;
+}
+.head-title{ width: "18rem"; margin-top: "1rem"; text-align:center; font-size: 12px; font-weight: 900; color: rgb(107, 123, 136) }
+.card-body{
+     margin-top: 1rem;
+     text-align: center;
+     border: #000 solid 1px;
+     padding: 30px;
+     margin: 2%;
+}
+.jWJTEX{
+background: #fff !important;
+font-size: 12px;
+}
+.jWJTEX span{
+    color: #472864 !important; 
+}

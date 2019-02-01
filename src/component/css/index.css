@@ -1,0 +1,90 @@
+body,html{
+    background: rgb(245, 245, 245);
+}
+.logo-img{
+    width: 350px;
+    margin: auto;
+}
+.form-control, .btn {
+    min-height: 38px;
+    border-radius: 2px;
+}
+.btn {        
+    font-size: 15px;
+    font-weight: bold;
+}
+.myblue,.myblue:hover {
+    background: #472864
+}
+.mybluecolor,.mybluecolor:hover {
+    color: #472864
+}
+.gold-color,.gold-color:hover{
+    color: rgb(251, 207, 32) !important;
+}
+.transparent {
+    background: transparent
+}
+a, a:hover{
+    text-decoration: none;
+    color: #472864;
+    font-size: 0.9rem;
+}
+.signup{
+    color:#2e6da4 !important;
+    background-color: transparent !important;
+    padding: 20px;
+}
+.clearfix-50{
+    clear: both;
+    margin-top: 50px;
+}
+button{
+ padding: 15px !important;
+}
+input{
+    padding: 25px !important; 
+}
+.largeInput{
+    min-width: 96%;
+    font-size: 14px !important; ;
+    font-weight: 900 !important; ;
+}
+.App-header{
+    background-color:#f5f5f5;
+}
+.reg-input{
+    color: #472864;
+    font-size: 12px;
+     font-weight:bold
+    }
+    .bs-switch {
+        width: 40px !important;
+        height: 16px !important;
+        margin: 0px !important;
+    }
+    .bs-switch .slider:before {
+        height: 16px !important;
+        width: 16px !important;
+        left: 1px !important;
+        bottom: 0px !important;
+        background-color: white;
+    }
+    .bs-switch input:checked + .slider {
+        background-color: #472864 !important;
+    }
+    .font-small{
+        font-size: 12px !important;
+        font-weight: 800;
+    }
+    .font-md{
+        font-size: 16px !important;
+        font-weight: 900 !important;
+    }
+    .bs-switch .slider{
+      top: 4px !important;
+    left: -10px !important;
+    right: 5px !important;
+    bottom: -3px !important;  
+    }
+    
