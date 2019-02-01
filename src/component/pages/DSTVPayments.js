@@ -1,7 +1,8 @@
 import React from "react";
 import {
     MDBRow, MDBCol, MDBCard, MDBBtn, MDBIcon,
-    MDBTable, MDBTableBody, MDBCardText, MDBCardTitle, MDBTableHead
+    MDBTable, MDBTableBody, MDBCardText, MDBCardTitle, MDBTableHead,
+    MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter
 }
     from 'mdbreact';
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
@@ -13,8 +14,15 @@ class DSTVPayments extends React.Component {
         this.state = {
             collapse: false,
             selectedIndex: 0,
+            value: 'coconut'
         }
+        this.handleChange = this.handleChange.bind(this)
     };
+
+    handleChange(event) {
+        this.setState({ value: event.target.value });
+    }
+
     handleSelect = index => {
         this.setState({ selectedIndex: index });
     };
@@ -22,7 +30,12 @@ class DSTVPayments extends React.Component {
     handleButtonClick = () => {
         this.setState({ selectedIndex: 0 });
     };
-
+    toggleModal = nr => () => {
+        let modalNumber = 'modal' + nr
+        this.setState({
+            [modalNumber]: !this.state[modalNumber]
+        });
+    }
     render() {
         return (
             <MDBRow size='12' className="table-tab" >
@@ -36,7 +49,7 @@ class DSTVPayments extends React.Component {
                         <Tab style={{ color: '#472864', 'font-size': '16px', 'font-weight': '900' }}>Transaction</Tab>
                     </TabList>
 
-                    <TabPanel> 
+                    <TabPanel>
                         <MDBTable fluid>
                             {/* <MDBTableHead>
                                             <tr>
@@ -52,17 +65,17 @@ class DSTVPayments extends React.Component {
                                 <tr>
                                     <td colSpan='3'>Mark</td>
                                     <td>01234567890</td>
-                                    <td className='text-right'><Link color="purple" className='btn-link' to='/'>@mdo</Link></td>
+                                    <td className='text-right'><a color="purple" onClick={this.toggleModal(12)} className='btn-link' to='/'>Renew subscription</a></td>
                                 </tr>
                                 <tr>
                                     <td colSpan='3'>Jacob</td>
                                     <td>01234567890</td>
-                                    <td className='text-right'><Link color="purple" to='/' className='btn-link'>@mdo</Link></td>
+                                    <td className='text-right'><a color="purple" onClick={this.toggleModal(12)} to='/' className='btn-link'>Renew subscription</a></td>
                                 </tr>
                                 <tr>
                                     <td colSpan='3'>Larry</td>
                                     <td>01234567890</td>
-                                    <td className='text-right'><Link color="purple" to='/' className='btn-link'>@mdo</Link></td>
+                                    <td className='text-right'><a color="purple" onClick={this.toggleModal(12)} to='/' className='btn-link'>Renew subscription</a></td>
                                 </tr>
                             </MDBTableBody>
                         </MDBTable>
@@ -148,7 +161,67 @@ class DSTVPayments extends React.Component {
                             </MDBTableBody>
                         </MDBTable>
                     </TabPanel>
+                    <MDBModal isOpen={this.state.modal12} toggle={this.toggleModal(12)} centered>
+                        <MDBModalHeader toggle={this.toggleModal(12)} className='modal-head'>RENEW SUSCRIPTION</MDBModalHeader>
+                        <MDBModalBody>
+                            <MDBRow md="12">
+                                <MDBCol md="12" style={{ textAlign: 'left' }}>
+                                    <label className='reg-input'>Full Name</label>
+                                    <input
+                                        type="name"
+                                        id="defaultFormNameEx"
+                                        className="form-control"
+                                        placeholder='Name'
+                                    />
+                                </MDBCol>
+                                <MDBCol md="12" style={{ textAlign: 'left' }}>
+                                    <label className='reg-input'>DSTV Account</label><br />
+                                    <input
+                                        type="text"
+                                        id="defaultFormDSTVAccountEx"
+                                        className="form-control"
+                                        placeholder='9897878863'
+                                        disabled='true'
+                                    />
+                                </MDBCol>
+                                <MDBCol md="12" style={{ textAlign: 'left' }}>
+                                    <label className='reg-input'>Account</label><br />
+                                    <select className='form-control' value={this.state.value} onChange={this.handleChange}>
+                                        <option value="FCMB">FCMB</option>
+                                    </select>
+                                    {/* <input
+                                        type="select"
+                                        id="defaultFormBankNameEx"
+                                        className="form-control"
+                                        placeholder='Bank Name'
+                                    /> */}
+                                    {/* <MDBSelect color="primary">
+                                        <MDBSelectInput selected="Choose your option" />
+                                        <MDBSelectOptions>
+                                            <MDBSelectOption disabled>Choose your option</MDBSelectOption>
+                                            <MDBSelectOption value="1">FCMB</MDBSelectOption>
+                                        </MDBSelectOptions>
+                                    </MDBSelect> */}
+                                </MDBCol>
+                                <br />
+                                <p></p>
+                                <MDBCol md="12">
+                                    <div className="form-group d-flex-center mybluecolor col-12">
+                                        <label className="bs-switch">
+                                            <input type="checkbox" />
+                                            <span className="slider round" />
+                                        </label>
+                                        <span className='mybluecolor font-small'>i have read and agree to the <a className='gold-color' href="/">terms and conditions</a></span>
+                                    </div>
+                                </MDBCol>
 
+                            </MDBRow>
+                        </MDBModalBody>
+                        <MDBModalFooter>
+                            <MDBBtn color="white" onClick={this.toggleModal(12)}>Cancel</MDBBtn>
+                            <MDBBtn className="mybluecolor" color="primary">Make Payment</MDBBtn>
+                        </MDBModalFooter>
+                    </MDBModal>
                 </Tabs>
             </MDBRow>
         );

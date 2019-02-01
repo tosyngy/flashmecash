@@ -1,8 +1,8 @@
 import React from "react";
 import {
     MDBRow, MDBCol, MDBCard, MDBBtn, MDBIcon,
-    MDBTable, MDBTableBody, MDBCardText, MDBCardTitle, MDBTableHead,MDBSelectInput,MDBSelectOptions,
-    MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, Link,MDBSelect,MDBSelectOption
+    MDBTable, MDBTableBody, MDBCardText, MDBCardTitle, MDBTableHead,
+    MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, Link, MDBSelect, MDBSelectOption, MDBSelectInput, MDBSelectOptions,
 }
     from 'mdbreact';
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
@@ -71,7 +71,7 @@ class Account extends React.Component {
     handleButtonClick = () => {
         this.setState({ selectedIndex: 0 });
     };
-    toggle = nr => () => {
+    toggleModal = nr => () => {
         let modalNumber = 'modal' + nr
         this.setState({
             [modalNumber]: !this.state[modalNumber]
@@ -142,7 +142,7 @@ class Account extends React.Component {
                                 <tr>
                                     <td colSpan='3'>5 Transfer</td>
                                     <td colSpan='3'>
-                                        <MDBBtn flat size="sm" className='add-page' onClick={this.toggle(14)}>Send Money</MDBBtn>
+                                        <MDBBtn flat size="sm" className='add-page' onClick={this.toggleModal(14)}>Send Money</MDBBtn>
                                         <MDBBtn flat size="sm" className='add-page white' style={{ width: '200px' }}><MDBIcon icon="filter" className="mr-2" />filter transaction</MDBBtn>
                                     </td>
                                 </tr>
@@ -192,11 +192,11 @@ class Account extends React.Component {
                                 <tr>
                                     <td colSpan='3'>5 Beneficiaries</td>
                                     <td colSpan='3'>
-                                        <MDBBtn flat size="sm" className='add-page' style={{width:'150px'}} onClick={this.toggle(12)}>
-                                        <MDBIcon icon="plus" className="mr-2" />
-                                        Add Beneficiary
+                                        <MDBBtn flat size="sm" className='add-page' style={{ width: '150px' }} onClick={this.toggleModal(12)}>
+                                            <MDBIcon icon="plus" className="mr-2" />
+                                            Add Beneficiary
                                         </MDBBtn>
-                                       </td>
+                                    </td>
                                 </tr>
                             </MDBTableHead>
                             <MDBTableBody>
@@ -210,26 +210,26 @@ class Account extends React.Component {
                                     <td><span className="dot circledot">OS</span></td>
                                     <td>Koala ologu</td>
                                     <td>0000000000(FCMB)</td>
-                                    <td colSpan='3'  className='text-right'>09/09/8362</td>
+                                    <td colSpan='3' className='text-right'>09/09/8362</td>
                                 </tr>
                                 <tr>
                                     <td><span className="dot circledot">OS</span></td>
                                     <td>Koala ologu</td>
                                     <td>0000000000(FCMB)</td>
-                                    <td colSpan='3'  className='text-right'>09/09/8362</td>
+                                    <td colSpan='3' className='text-right'>09/09/8362</td>
                                 </tr>
                                 <tr>
                                     <td><span className="dot circledot">OS</span></td>
                                     <td>Koala ologu</td>
                                     <td>0000000000(FCMB)</td>
-                                    <td colSpan='3'  className='text-right'>09/09/8362</td>
+                                    <td colSpan='3' className='text-right'>09/09/8362</td>
                                 </tr>
                             </MDBTableBody>
                         </MDBTable>
                     </TabPanel>
                 </Tabs>
-                <MDBModal isOpen={this.state.modal14} toggle={this.toggle(14)} centered>
-                    <MDBModalHeader toggle={this.toggle(14)} className='modal-head'>Send Money</MDBModalHeader>
+                <MDBModal isOpen={this.state.modal14} toggle={this.toggleModal(14)} centered>
+                    <MDBModalHeader toggle={this.toggleModal(14)} className='modal-head'>Send Money</MDBModalHeader>
                     <MDBModalBody>
                         <MDBRow md="12">
                             <MDBCol md="12" style={{ textAlign: 'left' }}>
@@ -274,12 +274,12 @@ class Account extends React.Component {
                         </MDBRow>
                     </MDBModalBody>
                     <MDBModalFooter>
-                        <MDBBtn color="white" onClick={this.toggle(14)}>Cancel</MDBBtn>
+                        <MDBBtn color="white" onClick={this.toggleModal(14)}>Cancel</MDBBtn>
                         <MDBBtn color="primary">Send Money</MDBBtn>
                     </MDBModalFooter>
                 </MDBModal>
-                <MDBModal isOpen={this.state.modal13} toggle={this.toggle(13)} centered>
-                    <MDBModalHeader toggle={this.toggle(13)} className='modal-head'>Send Money</MDBModalHeader>
+                <MDBModal isOpen={this.state.modal13} toggle={this.toggleModal(13)} centered>
+                    <MDBModalHeader toggle={this.toggleModal(13)} className='modal-head'>Send Money</MDBModalHeader>
                     <MDBModalBody>
                         <MDBRow md="12">
                             <p className='bd-highlight text-center' style={{ color: '#472864', fontWeight: 'bold', fontSize: '14px', maxWidth: '250px', margin: 'auto' }}>
@@ -297,12 +297,12 @@ class Account extends React.Component {
                         </MDBRow>
                     </MDBModalBody>
                     <MDBModalFooter>
-                        <MDBBtn color="white" onClick={this.toggle(13)}>Cancel</MDBBtn>
+                        <MDBBtn color="white" onClick={this.toggleModal(13)}>Cancel</MDBBtn>
                         <MDBBtn color="primary">Confirm OTP</MDBBtn>
                     </MDBModalFooter>
                 </MDBModal>
-                <MDBModal isOpen={this.state.modal12} toggle={this.toggle(12)} centered>
-                    <MDBModalHeader toggle={this.toggle(12)} className='modal-head'>Add Beneficiary</MDBModalHeader>
+                <MDBModal isOpen={this.state.modal12} toggle={this.toggleModal(12)} centered>
+                    <MDBModalHeader toggle={this.toggleModal(12)} className='modal-head'>Add Beneficiary</MDBModalHeader>
                     <MDBModalBody>
                         <MDBRow md="12">
                             <MDBCol md="12" style={{ textAlign: 'left' }}>
@@ -325,12 +325,16 @@ class Account extends React.Component {
                             </MDBCol>
                             <MDBCol md="12" style={{ textAlign: 'left' }}>
                                 <label className='reg-input'>Bank Name</label><br />
-                                <input
+                                <select className='form-control' value={this.state.value} onChange={this.handleChange}>
+                                    <option value="FCMB">0902562562(FCMB)</option>
+                                </select>
+                                {/* <input
                                     type="select"
                                     id="defaultFormBankNameEx"
                                     className="form-control"
                                     placeholder='Bank Name'
-                                />
+                                /> */}
+
                                 {/* <MDBSelect color="primary">
                                     <MDBSelectInput selected="Choose your option" />
                                     <MDBSelectOptions>
@@ -342,7 +346,7 @@ class Account extends React.Component {
                         </MDBRow>
                     </MDBModalBody>
                     <MDBModalFooter>
-                        <MDBBtn color="white" onClick={this.toggle(12)}>Cancel</MDBBtn>
+                        <MDBBtn color="white" onClick={this.toggleModal(12)}>Cancel</MDBBtn>
                         <MDBBtn color="primary">Add Beneficiary</MDBBtn>
                     </MDBModalFooter>
                 </MDBModal>

@@ -12,6 +12,7 @@ import DSTVPayments from './component/pages/DSTVPayments';
 import AirtimeTopUp from './component/pages/AirtimeTopUp';
 import SignUp from './component/pages/signUp';
 import SignUp2 from './component/pages/signUp2';
+import Index from './component/pages';
 
 
 class App extends Component {
@@ -25,7 +26,8 @@ class App extends Component {
 const ConfigRouter = () => (
   <main>
     <Switch>
-      <Route exact path='/' component={Login} />
+      <Route exact path='/' component={Index} />
+      <Route path='/login' component={Login} />
       <Route path='/main' component={Main} />
       <Route path='/account' component={Account} />
       <Route path='/card' component={Card} />

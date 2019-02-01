@@ -1,7 +1,9 @@
 import React from "react";
 import {
-    MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon
+    MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, MDBCard, MDBListGroup, MDBListGroupItem
 } from 'mdbreact';
+import { Link } from "react-router-dom";
+
 import "react-tabs/style/react-tabs.css";
 import '../css/main.css';
 import SideBar from './includes/sidebar'
@@ -11,7 +13,7 @@ import Account from "./account";
 import DSTVPayments from "./DSTVPayments";
 import AirtimeTopUp from "./AirtimeTopUp";
 
-class Main extends React.Component {
+class Index extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -24,11 +26,10 @@ class Main extends React.Component {
             <MDBContainer fluid>
                 <MDBRow>
                     <MDBCol md="3">
-                        <SideBar />
-                    </MDBCol>
-                    <MDBCol md="9" className="justify-content-around" style={{ height: '60px', padding: '50px 100px' }}>
-                        <Header />
-                        <AirtimeTopUp />
+                    <MDBListGroup>
+                    <MDBListGroupItem><Link to={`/login`}>Login</Link></MDBListGroupItem>
+                    <MDBListGroupItem><Link to={`/register`}>Register</Link></MDBListGroupItem>
+                </MDBListGroup>
                     </MDBCol>
                 </MDBRow>
                 {/* <Fab aria-label="Add" className='floatBTN'> */}
@@ -42,4 +43,4 @@ class Main extends React.Component {
     }
 };
 
-export default Main;
+export default Index;

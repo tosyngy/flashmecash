@@ -95,7 +95,7 @@ class Register extends React.Component {
                                             <input type="checkbox" />
                                             <span className="slider round" />
                                         </label>
-                                        <span className='mybluecolor font-small'>i have read and agree to the <a className='gold-color' href="/">terms and conditions</a></span>
+                                        <span className='mybluecolor font-small'>i have read and agree to the <u><a className='gold-color' href="/">terms and conditions</a></u></span>
                                     </div>
                                     <div className="text-center">
                                         <MDBBtn color="secondary-color-dark" type="button" className='large gold-color myblue font-md gold-color' style={{ minWidth: '50%'}}>Sign Up</MDBBtn>
