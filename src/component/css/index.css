@@ -13,13 +13,22 @@ body,html{
     font-size: 15px;
     font-weight: bold;
 }
-.myblue,.myblue:hover {
-    background: #472864
+.myblue{
+    background: #472864 !important;
 }
-.mybluecolor,.mybluecolor:hover {
+.myblue:hover {
+    background: #472864 !important;
+}
+.mybluecolor{
     color: #472864
 }
-.gold-color,.gold-color:hover{
+.mybluecolor:hover {
+    color: #472864
+}
+.gold-color{
+    color: rgb(251, 207, 32) !important;
+}
+.gold-color:hover{
     color: rgb(251, 207, 32) !important;
 }
 .transparent {
@@ -47,8 +56,9 @@ input{
 }
 .largeInput{
     min-width: 96%;
-    font-size: 14px !important; ;
-    font-weight: 900 !important; ;
+    font-size: 14px !important;
+    font-weight: 900 !important;
+    float: left !important;
 }
 .App-header{
     background-color:#f5f5f5;
@@ -58,6 +68,9 @@ input{
     font-size: 12px;
      font-weight:bold
     }
+    .reg-input.light{
+         font-weight:normal;
+        }
     .bs-switch {
         width: 40px !important;
         height: 16px !important;
@@ -87,4 +100,13 @@ input{
     right: 5px !important;
     bottom: -3px !important;  
     }
-    
+    .label-text{ color: rgb(107, 123, 136); font-size: 14px; max-width: 300px; margin: auto;font-weight: 900 !important; }
+    .label-text.instruction {color: #472864}
+    .circledot{font-weight: 900 !important;background-color:#472864;font-size: 16px;border-radius: 50%; padding:10px;
+color: #fff}
+.text-big{
+    font-size: 1.5em;
+    font-weight: 700 !important;
+    color: black;
+    padding: 0 10px;
+}

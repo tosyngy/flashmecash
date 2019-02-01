@@ -1,7 +1,8 @@
 import React from "react";
 import {
     MDBRow, MDBCol, MDBCard, MDBBtn, MDBIcon,
-    MDBTable, MDBTableBody, MDBCardText, MDBCardTitle
+    MDBTable, MDBTableBody, MDBCardText, MDBCardTitle, MDBTableHead,
+    MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter,Link
 }
     from 'mdbreact';
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
@@ -13,6 +14,7 @@ class Account extends React.Component {
         this.state = {
             collapse: false,
             selectedIndex: 0,
+            modal1: false,
             dataLine: {
                 labels: ["January", "February", "March", "April", "May", "June", "July"],
                 datasets: [
@@ -69,6 +71,12 @@ class Account extends React.Component {
     handleButtonClick = () => {
         this.setState({ selectedIndex: 0 });
     };
+    toggle = nr => () => {
+        let modalNumber = 'modal' + nr
+        this.setState({
+            [modalNumber]: !this.state[modalNumber]
+        });
+    }
 
     render() {
         return (
@@ -79,8 +87,8 @@ class Account extends React.Component {
                 >
                     <TabList>
                         <Tab style={{ color: '#472864', 'font-size': '16px', 'font-weight': '900' }} >Account</Tab>
-                        <Tab style={{ color: '#472864', 'font-size': '16px', 'font-weight': '900' }}>Summary</Tab>
-                        <Tab style={{ color: '#472864', 'font-size': '16px', 'font-weight': '900' }}>Transaction</Tab>
+                        <Tab style={{ color: '#472864', 'font-size': '16px', 'font-weight': '900' }}>Transfer</Tab>
+                        <Tab style={{ color: '#472864', 'font-size': '16px', 'font-weight': '900' }}>Beneficiary</Tab>
                     </TabList>
 
                     <TabPanel>
@@ -117,16 +125,66 @@ class Account extends React.Component {
                             </MDBCol>
                             <MDBCol md='6'>
                                 <MDBRow className='d-flex flex-row-reverse'>
-                                    <MDBBtn flat size="sm" className='add-page'><MDBIcon icon="plus" className="mr-2" />Add new account</MDBBtn>
+                                    <MDBBtn flat size="sm" className='add-page' style={{ width: '200px' }}><MDBIcon icon="plus" className="mr-2" />Add new account</MDBBtn>
                                 </MDBRow>
                                 <MDBRow className='d-flex flex-row-reverse'>
-                                    <MDBBtn flat size="sm" className='add-page'><MDBIcon icon="plus" className="mr-2" />Add new wallet</MDBBtn>
+                                    <MDBBtn flat size="sm" className='add-page' style={{ width: '200px' }}><MDBIcon icon="plus" className="mr-2" />Add new wallet</MDBBtn>
                                 </MDBRow>
                             </MDBCol>
                         </MDBRow>
                         <MDBRow>
                             <Line data={this.state.dataLine} options={{ responsive: true }} />
                         </MDBRow>
+                    </TabPanel>
+                    <TabPanel>
+                        <MDBTable fluid>
+                            <MDBTableHead>
+                                <tr>
+                                    <td colSpan='3'>5 Transfer</td>
+                                    <td colSpan='3'>
+                                        <MDBBtn flat size="sm" className='add-page' onClick={this.toggle(1)}>Send Money</MDBBtn>
+                                        <MDBBtn flat size="sm" className='add-page white' style={{ width: '200px' }}><MDBIcon icon="filter" className="mr-2" />filter transaction</MDBBtn>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th>Reciepient</th>
+                                    <th>Amount</th>
+                                    <th colSpan='2'>Description</th>
+                                    <th></th>
+                                </tr>
+                            </MDBTableHead>
+                            <MDBTableBody>
+                                <tr>
+                                    <td><span class="dot circledot">OS</span></td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td colSpan='2'>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="dot circledot">OS</span></td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td colSpan='2'>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="dot circledot">OS</span></td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                    <td colSpan='2'>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="dot circledot">OS</span></td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td colSpan='2'>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                            </MDBTableBody>
+                        </MDBTable>
                     </TabPanel>
                     <TabPanel>
                         <MDBTable fluid>
@@ -159,45 +217,57 @@ class Account extends React.Component {
                             </MDBTableBody>
                         </MDBTable>
                     </TabPanel>
-                    <TabPanel>
-                        <MDBTable fluid>
-                            {/* <MDBTableHead>
-                                            <tr>
-                                                <th>First</th>
-                                                <th>Last</th>
-                                                <th>Handle</th>
-                                            </tr>
-                                        </MDBTableHead> */}
-                            <MDBTableBody>
-                                <tr>
-                                    <td colSpan='2'>5 Accounts</td>
-                                    <td colSpan='1'> <MDBBtn flat size="sm" className='add-page'><MDBIcon icon="plus" className="mr-2" />Button</MDBBtn>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                            </MDBTableBody>
-                        </MDBTable>
-                    </TabPanel>
+
                 </Tabs>
+                <MDBModal isOpen={this.state.modal1} toggle={this.toggle(1)} centered>
+                    <MDBModalHeader toggle={this.toggle(1)} className='modal-head'>Send Money</MDBModalHeader>
+                    <MDBModalBody>
+                        <MDBRow md="12">
+                            <MDBCol md="12" style={{ textAlign: 'left' }}>
+                                <label className='reg-input light'>How much do you want to send?</label>
+                                <input
+                                    type="currency"
+                                    id="defaultFormSendMoneyAmountEx"
+                                    className="form-control"
+                                    placeholder='Amount'
+                                />
+                            </MDBCol>
+                            <MDBCol md="12" style={{ textAlign: 'left' }}>
+                                <label className='reg-input light'>Send to?</label><br />
+                                <input
+                                    type="text"
+                                    id="defaultFormSendMoneyRecieverIDEx"
+                                    className="form-control"
+                                    placeholder='Email, Phone No or Account no'
+                                />
+                            </MDBCol>
+                            <MDBCol md="12" style={{ textAlign: 'left' }}>
+                                <label className='reg-input light'>Reciever's Name</label><br />
+                                <input
+                                    type="text"
+                                    id="defaultFormSendMoneyNameEx"
+                                    className="form-control"
+                                    placeholder="Name"
+                                />
+                            </MDBCol>
+                            <u>Or select existing beneficiary</u>
+
+                            <MDBCol md="12" style={{ textAlign: 'left' }}>
+                                <label className='reg-input light'>Narration</label><br />
+                                <input
+                                    type="text"
+                                    id="defaultFormSendMoneyNarrationEx"
+                                    className="form-control"
+                                    placeholder='Last name'
+                                />
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBModalBody>
+                    <MDBModalFooter>
+                        <MDBBtn color="secondary" onClick={this.toggle(1)}>Close</MDBBtn>
+                        <MDBBtn color="primary">Save changes</MDBBtn>
+                    </MDBModalFooter>
+                </MDBModal>
             </MDBRow>
         );
     }

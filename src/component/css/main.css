@@ -81,6 +81,10 @@ li a{
     color: #fbcf20 !important;
     width: 100px;
 }
+.add-page.white{
+    background-color: #fff !important;
+    color: #472864 !important;
+}
 .head-title{ width: "18rem"; margin-top: "1rem"; text-align:center; font-size: 12px; font-weight: 900; color: rgb(107, 123, 136) }
 .card-body{
      margin-top: 1rem;
@@ -95,4 +99,9 @@ font-size: 12px;
 }
 .jWJTEX span{
     color: #472864 !important; 
+}
+.modal-head{
+    color: #472864;
+    font-weight: 900;
+    flex: auto;
 }

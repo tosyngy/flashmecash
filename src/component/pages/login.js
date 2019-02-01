@@ -48,7 +48,6 @@ class Login extends React.Component {
                             <div className="clearfix-50">
                                 <div class="form-group">
                                     <Link class="btn btn-block signup" to={`/main`}>Create an Account</Link>
-                                    <Link to="/main">Roster</Link>
                                 </div>
                             </div>
                         </form>

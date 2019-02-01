@@ -32,7 +32,7 @@ class Register extends React.Component {
                                     </p>
                                     <MDBRow md="12">
                                         <MDBCol md="6" style={{ textAlign: 'left' }}>
-                                            <span className='reg-input'>First name</span><br />
+                                            <label className='reg-input'>First name</label><br />
                                             <input
                                                 type="type"
                                                 id="defaultFormRegisterFirstNameEx"
@@ -41,7 +41,7 @@ class Register extends React.Component {
                                             />
                                         </MDBCol>
                                         <MDBCol md="6" style={{ textAlign: 'left' }}>
-                                            <span className='reg-input'>Last name</span><br />
+                                            <label className='reg-input'>Last name</label><br />
                                             <input
                                                 type="type"
                                                 id="defaultFormRegisterLastNameEx"
@@ -52,7 +52,7 @@ class Register extends React.Component {
                                     </MDBRow>
                                     <MDBRow md="12">
                                         <MDBCol md="6" style={{ textAlign: 'left' }}>
-                                            <span className='reg-input'>Gender</span><br />
+                                            <label className='reg-input'>Gender</label><br />
                                             <input
                                                 type="type"
                                                 id="defaultFormRegisterGenderEx"
@@ -61,7 +61,7 @@ class Register extends React.Component {
                                             />
                                         </MDBCol>
                                         <MDBCol md="6" style={{ textAlign: 'left' }}>
-                                            <span className='reg-input'>Date of Birth</span><br />
+                                            <label className='reg-input'>Date of Birth</label><br />
                                             <input
                                                 type="date"
                                                 id="defaultFormRegisterDOBEx"
@@ -72,7 +72,7 @@ class Register extends React.Component {
                                     </MDBRow>
                                     <MDBRow md="12">
                                         <MDBCol md="6" style={{ textAlign: 'left' }}>
-                                            <span className='reg-input'>Phone</span><br />
+                                            <label className='reg-input'>Phone</label><br />
                                             <input
                                                 type="tel"
                                                 id="defaultFormRegisterPhoneEx"
@@ -81,7 +81,7 @@ class Register extends React.Component {
                                             />
                                         </MDBCol>
                                         <MDBCol md="6" style={{ textAlign: 'left' }}>
-                                            <span className='reg-input'>Email Address(optional)</span><br />
+                                            <label className='reg-input'>Email Address(optional)</label><br />
                                             <input
                                                 type="email"
                                                 id="defaultFormRegisterEmailEx"
@@ -98,7 +98,7 @@ class Register extends React.Component {
                                         <span className='mybluecolor font-small'>i have read and agree to the <a className='gold-color' href="/">terms and conditions</a></span>
                                     </div>
                                     <div className="text-center">
-                                        <MDBBtn color="purple" type="button" className='large gold-color myblue font-md gold-color' style={{ minWidth: '50%'}}>Sign Up</MDBBtn>
+                                        <MDBBtn color="secondary-color-dark" type="button" className='large gold-color myblue font-md gold-color' style={{ minWidth: '50%'}}>Sign Up</MDBBtn>
                                     </div>
                                 </form>
                             </MDBCol>

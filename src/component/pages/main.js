@@ -1,12 +1,13 @@
 import React from "react";
 import {
-    MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon,
+    MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon
 } from 'mdbreact';
 import "react-tabs/style/react-tabs.css";
 import '../css/main.css';
-import Card from './cards'
 import SideBar from './includes/sidebar'
 import Header from './includes/header'
+import Settings from "./settings";
+import Account from "./account";
 
 class Main extends React.Component {
     constructor(props) {
@@ -25,7 +26,7 @@ class Main extends React.Component {
                     </MDBCol>
                     <MDBCol md="9" className="justify-content-around" style={{ height: '60px', padding: '50px 100px' }}>
                         <Header />
-                        <Card />
+                        <Account />
                     </MDBCol>
                 </MDBRow>
                 {/* <Fab aria-label="Add" className='floatBTN'> */}
