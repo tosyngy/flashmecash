@@ -102,6 +102,8 @@ font-size: 12px;
 }
 .modal-head{
     color: #472864;
-    font-weight: 900;
+    font-weight: bolder;
     flex: auto;
+    text-align: center;
 }
+.narration{color: #472864; font-weight:bold; font-size: '14px'; max-width: 300px; margin: 'auto' }

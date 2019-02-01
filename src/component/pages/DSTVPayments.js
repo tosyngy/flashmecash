@@ -87,28 +87,28 @@ class DSTVPayments extends React.Component {
                             </MDBTableHead>
                             <MDBTableBody>
                                 <tr>
-                                    <td><span class="dot circledot">OS</span></td>
+                                    <td><span className="dot circledot">OS</span></td>
                                     <td>Otto</td>
                                     <td>@mdo</td>
                                     <td colSpan='2'>Otto</td>
                                     <td>@mdo</td>
                                 </tr>
                                 <tr>
-                                    <td><span class="dot circledot">OS</span></td>
+                                    <td><span className="dot circledot">OS</span></td>
                                     <td>Otto</td>
                                     <td>@mdo</td>
                                     <td colSpan='2'>Otto</td>
                                     <td>@mdo</td>
                                 </tr>
                                 <tr>
-                                    <td><span class="dot circledot">OS</span></td>
+                                    <td><span className="dot circledot">OS</span></td>
                                     <td>Thornton</td>
                                     <td>@fat</td>
                                     <td colSpan='2'>Otto</td>
                                     <td>@mdo</td>
                                 </tr>
                                 <tr>
-                                    <td><span class="dot circledot">OS</span></td>
+                                    <td><span className="dot circledot">OS</span></td>
                                     <td>the Bird</td>
                                     <td>@twitter</td>
                                     <td colSpan='2'>Otto</td>

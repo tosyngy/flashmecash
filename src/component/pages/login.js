@@ -42,12 +42,12 @@ class Login extends React.Component {
                             <div className="text-center">
                                 <MDBBtn color="purple" type="submit" className='largeInput gold-color myblue'>Login to your account</MDBBtn>
                             </div>
-                            <div class="form-group text-center ">
+                            <div className="form-group text-center ">
                                 <a href="/">Forgot your Password?</a>
                             </div>
                             <div className="clearfix-50">
-                                <div class="form-group">
-                                    <Link class="btn btn-block signup" to={`/main`}>Create an Account</Link>
+                                <div className="form-group">
+                                    <Link className="btn btn-block signup" to={`/main`}>Create an Account</Link>
                                 </div>
                             </div>
                         </form>
