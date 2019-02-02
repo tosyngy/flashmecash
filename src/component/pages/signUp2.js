@@ -1,8 +1,7 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBMedia } from 'mdbreact';
-import '../css/index.css';
-import logo from "../utils/images/logo-placeholder.png"
-import ReCAPTCHA from "react-google-recaptcha";
+import '../css/form.css';
+import logo from "../assests/images/logo-placeholder.png"
 // import { Link } from "react-router-dom";
 
 class SignUp2 extends React.Component {

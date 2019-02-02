@@ -28,15 +28,13 @@ class Main extends React.Component {
                     </MDBCol>
                     <MDBCol md="9" className="justify-content-around" style={{ height: '60px', padding: '50px 100px' }}>
                         <Header />
-                        <AirtimeTopUp />
+                        <Account />
                     </MDBCol>
                 </MDBRow>
-                {/* <Fab aria-label="Add" className='floatBTN'> */}
                 <MDBBtn size="lg" color='yellow' className='floatBTN' icon='300px'><MDBIcon icon="comments" style={{
                     color: '#472864',
                     'font-size': '30px'
                 }} /></MDBBtn>
-                {/* </Fab> */}
             </MDBContainer>
         );
     }
