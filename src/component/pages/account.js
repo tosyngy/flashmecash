@@ -71,11 +71,17 @@ class Account extends React.Component {
     handleButtonClick = () => {
         this.setState({ selectedIndex: 0 });
     };
-    toggleModal = nr => () => {
+    toggleModal = (nr,nc=0) => () => {
+        let modalNumberClose = 'modal' + nc
+        this.setState({
+            [modalNumberClose]: false
+        });
+
         let modalNumber = 'modal' + nr
         this.setState({
             [modalNumber]: !this.state[modalNumber]
         });
+
     }
 
     render() {
@@ -275,7 +281,7 @@ class Account extends React.Component {
                     </MDBModalBody>
                     <MDBModalFooter>
                         <MDBBtn color="white" onClick={this.toggleModal(14)}>Cancel</MDBBtn>
-                        <MDBBtn color="primary">Send Money</MDBBtn>
+                        <MDBBtn color="primary" onClick={this.toggleModal(13,14)}>Send Money</MDBBtn>
                     </MDBModalFooter>
                 </MDBModal>
                 <MDBModal isOpen={this.state.modal13} toggle={this.toggleModal(13)} centered>

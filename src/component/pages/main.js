@@ -10,6 +10,7 @@ import Settings from "./settings";
 import Account from "./account";
 import DSTVPayments from "./DSTVPayments";
 import AirtimeTopUp from "./AirtimeTopUp";
+import Cards from "./cards";
 
 class Main extends React.Component {
     constructor(props) {
@@ -24,11 +25,16 @@ class Main extends React.Component {
             <MDBContainer fluid>
                 <MDBRow>
                     <MDBCol md="3">
-                        <SideBar />
+                        <SideBar index={this.props.match.params.page}/>
                     </MDBCol>
                     <MDBCol md="9" className="justify-content-around" style={{ height: '60px', padding: '50px 100px' }}>
                         <Header />
-                        <Account />
+                        {this.props.match.params.page ==='' && <Account />}
+                        {this.props.match.params.page ==='account' && <Account />}
+                        {this.props.match.params.page ==='dstv-payments' && <DSTVPayments />}
+                        {this.props.match.params.page ==='airtime-top-ups' && <AirtimeTopUp />}
+                        {this.props.match.params.page ==='settings' && <Settings />}
+                        {this.props.match.params.page ==='cards' && <Cards />}
                     </MDBCol>
                 </MDBRow>
                 <MDBBtn size="lg" color='yellow' className='floatBTN' icon='300px'><MDBIcon icon="comments" style={{

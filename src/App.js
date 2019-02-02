@@ -28,18 +28,18 @@ const ConfigRouter = () => (
     <Switch>
       <Route exact path='/' component={Index} />
       <Route path='/login' component={Login} />
-      <Route path='/main' component={Main} />
-      <Route path='/account' component={Account} />
-      <Route path='/card' component={Card} />
+      <Route path='/main/:page' component={Main} />
+      {/* <Route path='/account' component={Account} /> */}
+      {/* <Route path='/card' component={Card} /> */}
       <Route path='/register' component={Register} />
       <Route path='/password-reset' component={PasswordReset} />
       <Route path='/registration-option' component={RegistrationOption} />
-      <Route path='/dstv-payments' component={DSTVPayments} />
-      <Route path='/airtime-top-ups' component={AirtimeTopUp} />
+      {/* <Route path='/dstv-payments' component={DSTVPayments} /> */}
+      {/* <Route path='/airtime-top-ups' component={AirtimeTopUp} /> */}
       <Route path='/signup' component={SignUp} />
       <Route path='/signup-2' component={SignUp2} />
-
     </Switch>
+
   </main>
 )
 

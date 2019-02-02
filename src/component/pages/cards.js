@@ -60,14 +60,15 @@ class Cards extends React.Component {
                         </MDBRow>
                     </TabPanel>
                     <TabPanel>
-                        <MDBTable fluid>
-                            {/* <MDBTableHead>
+                    Your Virtual cards displays here
+                        {/* <MDBTable fluid>
+                            <MDBTableHead>
                                             <tr>
                                                 <th>First</th>
                                                 <th>Last</th>
                                                 <th>Handle</th>
                                             </tr>
-                                        </MDBTableHead> */}
+                                        </MDBTableHead>
                             <MDBTableBody>
                                 <tr>
                                     <td colSpan='3'>5 Accounts</td>
@@ -88,7 +89,7 @@ class Cards extends React.Component {
                                     <td>@twitter</td>
                                 </tr>
                             </MDBTableBody>
-                        </MDBTable>
+                        </MDBTable> */}
                     </TabPanel>
                 </Tabs>
             </MDBRow>

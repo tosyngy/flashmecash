@@ -81,7 +81,8 @@ class DSTVPayments extends React.Component {
                         </MDBTable>
                     </TabPanel>
                     <TabPanel>
-                        <MDBTable fluid>
+                       Summary displays here
+                        {/* <MDBTable fluid>
                             <MDBTableHead>
                                 <tr>
                                     <td colSpan='3'>5 Transfer</td>
@@ -128,17 +129,18 @@ class DSTVPayments extends React.Component {
                                     <td>@mdo</td>
                                 </tr>
                             </MDBTableBody>
-                        </MDBTable>
+                        </MDBTable> */}
                     </TabPanel>
                     <TabPanel>
-                        <MDBTable fluid>
-                            {/* <MDBTableHead>
+                    Transaction displays here
+                        {/* <MDBTable fluid>
+                             <MDBTableHead>
                                             <tr>
                                                 <th>First</th>
                                                 <th>Last</th>
                                                 <th>Handle</th>
                                             </tr>
-                                        </MDBTableHead> */}
+                                        </MDBTableHead> *
                             <MDBTableBody>
                                 <tr>
                                     <td colSpan='3'>5 Accounts</td>
@@ -159,7 +161,7 @@ class DSTVPayments extends React.Component {
                                     <td>@twitter</td>
                                 </tr>
                             </MDBTableBody>
-                        </MDBTable>
+                        </MDBTable> */}
                     </TabPanel>
                     <MDBModal isOpen={this.state.modal12} toggle={this.toggleModal(12)} centered>
                         <MDBModalHeader toggle={this.toggleModal(12)} className='modal-head'>RENEW SUSCRIPTION</MDBModalHeader>
