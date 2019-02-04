@@ -11,3 +11,60 @@
 .mybluecolor{
     color: #472864 !important;
 }
+.gold-color{
+    color: rgb(251, 207, 32) !important;
+}
+.gold-color:hover{
+    color: rgb(251, 207, 32) !important;
+}
+/* #apppage .gradient {
+    background: -moz-linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
+    background: -webkit-gradient(linear, 45deg, from(rgba(42, 27, 161, 0.7)), to(rgba(29, 210, 177, 0.7)));
+    background: -o-linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
+    background: linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
+  } */
+  
+  #apppage .view {
+    /* background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 400vh;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  #apppage h6 {
+    line-height: 1.7;
+  }
+  .font-weight-lighter{
+    font-size: 4rem !important;
+  text-align: center !important;
+  font-weight: 500 !important;
+  }
+  div.slant{
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Safari 3-8 */
+    transform: rotate(20deg);
+    position: relative;
+    left: 20%;
+  }
+  .acc-label{
+    color: rgb(107, 123, 136);
+    font-size: .7rem;
+    font-weight: 900;
+    line-height: 1
+}
+.footer-copyright.py-3.pull-right{
+    float: right;
+    font-size: 18px;
+    font-weight: 900;
+    color: rgb(107, 123, 136);
+}
+.footer-copyright.py-3 a{
+    font-size: 20px;
+    font-weight: 200;
+    color: rgb(107, 123, 136);
+    margin: 1px 13px;
+}

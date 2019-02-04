@@ -1,34 +1,40 @@
-import React from 'react';
+import React, { Component } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import {
-    MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler,
-    MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView, MDBMedia
-} from 'mdbreact';
-import { Link } from "react-router-dom";
-import '../css/index.css';
-import logo from "../assests/images/logo-placeholder.png"
+    MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler,
+    MDBCollapse, MDBMask, MDBRow, MDBCol, MDBBtn, MDBView, MDBContainer, MDBFormInline, MDBMedia
+} from "mdbreact";
+import "../css/index.css";
+import logo from '../assests/images/logo-placeholder.png';
+import mobile1 from '../assests/images/mobile1.png';
+import googleplay from '../assests/images/android-app-icon.png';
+import applestore from '../assests/images/apple.png';
 
 
+class Index extends Component {
+    state = {
+        collapsed: false
+    };
 
-class FullPageIntroWithFixedTransparentNavbar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            collapse: false,
-            isWideEnough: false,
-        };
-        this.onClick = this.onClick.bind(this);
-    }
-
-    onClick() {
+    handleTogglerClick = () => {
         this.setState({
-            collapse: !this.state.collapse,
+            collapsed: !this.state.collapsed
         });
-    }
+    };
 
     render() {
+        const navStyle = { marginTop: "4rem" };
+        const overlay = (
+            <div
+                id="sidenav-overlay"
+                style={{ backgroundColor: "transparent" }}
+                onClick={this.handleTogglerClick}
+            />
+        );
         return (
-            <div>
-                {/* <header> */}
+            <div id="apppage">
+                <Router>
+                    <div>
                         <MDBNavbar color="bg-white" dark expand="md" scrolling transparent>
                             <MDBNavbarBrand href="/">
                                 <MDBMedia center href="#">
@@ -56,24 +62,137 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
                                 </MDBNavbarNav>
                             </MDBCollapse>
                         </MDBNavbar>
+                        {this.state.collapsed && overlay}
+                    </div>
+                </Router>
+                <MDBView>
+                    <MDBMask className="justify-content-center">
+                        <MDBContainer className='d-flex'>
+                            <MDBCol md="6" xl="5" className="blank-text text-center align-items-center  text-md-left">
+                                <h1 className="h1-responsive font-weight-lighter mt-lg-5 ">
+                                    An Omnichannel digital bank
+                                    </h1>
+                                <hr className="hr-light" />
+                                <h5 className="mb-4 mybluecolor text-center font-weight-bold">
+                                    Digital solution to all your banking needs</h5>
+                                <MDBRow>
+                                <MDBCol md="6" xl="5" className="mt-xl-5">
+                                        <a href='#'>
+                                            <img style={{ width: '100%', padding: '1%' }}
+                                                src={applestore}
+                                                alt=""
+                                                className="img-responsive"
+                                            />
+                                        </a> 
+                                    </MDBCol>
+                                    <MDBCol md="6" xl="5" className="mt-xl-5">
+                                        <a href='#'>
+                                            <img style={{ width: '100%' }}
+                                                src={googleplay}
+                                                alt=""
+                                                className="img-responsive"
+                                            />
+                                        </a>
+                                    </MDBCol>
+                                </MDBRow>
+                            </MDBCol>
+                            <MDBCol md="6" xl="5" className="mt-xl-5 slant  text-center align-items-center">
+                                <img
+                                    src={mobile1}
+                                    alt=""
+                                    className="img-responsive "
 
-                    {/* <MDBView src="https://mdbootstrap.com/img/Photos/Others/img%20(40).jpg">
-                        <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
-                            <h2>This Navbar is fixed</h2>
-                            <h5>It will always stay visible on the top, even when you scroll down</h5>
-                            <p>Navbar's background will switch from transparent to solid color while scrolling down</p><br />
-                            <p>Full page intro with background image will be always displayed in full screen mode, regardless of device </p>
-                        </MDBMask>
-                    </MDBView> */}
-                {/* </header> */}
-
-                    <MDBView className="text-center my-5" transparent>
-                        <p align="justify"><Link to='/main'>Alternative to main index page</Link></p>
-                        <p align="justify">This will be removed once integration is set</p>
-                    </MDBView>
+                                />
+                            </MDBCol>
+                        </MDBContainer>
+                        <MDBRow style={{ padding: '5%' }}>
+                            <MDBCol md="12" style={{ backgroundColor: '#eee' }} className='d-flex text-center align-items-center' >
+                                <MDBCol md="7" xl="5" className="blank-text text-center align-items-center">
+                                    <h3 className="mb-4 mybluecolor text-left font-weight-bold">
+                                        Send monney directly to bank accounts, mobile number or email addresses
+                                        </h3>
+                                    <p className='acc-label' style={{ fontSize: '18px', lineHeight: 2 }}>
+                                        Enjoy an Omni-channel banking platform adopted to your lifestyle<br />
+                                        FMC is always there for you, whenever you need to send/request money and get paid.
+                               </p>
+                                </MDBCol>
+                                <MDBCol md="5" xl="5" className="mt-xl-5 text-center align-items-center" >
+                                    <img style={{ float: 'right' }}
+                                        src={mobile1}
+                                        alt=""
+                                        className="img-responsive "
+                                    />
+                                </MDBCol>
+                            </MDBCol>
+                        </MDBRow>
+                        <MDBRow style={{ padding: '5%' }} className='d-flex text-center align-items-center'>
+                            <MDBCol md="5" xl="5" className="mt-xl-5 text-center align-items-center" >
+                                <img style={{ float: 'right' }}
+                                    src={mobile1}
+                                    alt=""
+                                    className="img-responsive"
+                                />
+                            </MDBCol>
+                            <MDBCol md="6" xl="6" className="blank-text text-left align-items-center" style={{ padding: '5%' }}>
+                                <h3 className="mb-4 mybluecolor text-center font-weight-bold">
+                                    One stop shop for all your payment
+                                        </h3>
+                                <p className='acc-label' style={{ fontSize: '18px', lineHeight: 1.5 }}>
+                                    Track and manage all your payment collections, refunds<br />
+                                    payouts and more FREE. Save time to focus on whats happening and make money!
+                               </p>
+                            </MDBCol>
+                        </MDBRow>
+                        <MDBRow style={{ padding: '5%' }} className='d-flex text-center align-items-center'>
+                            <MDBCol md="12" xl="12" className="blank-text text-center align-items-center myblue" style={{ padding: '5%' }}>
+                                <h3 className="mb-4 gold-color text-center font-weight-bold">
+                                    Help us build the kind of bank you want to use
+                                        </h3>
+                                <p className='acc-label' style={{ fontSize: '18px', lineHeight: 1.5, color: '#fff' }}>
+                                    Download the Monzo app on iOS or Android and become<br /> one of the hundred of thousands of people using
+                                    better bank
+                               </p>
+                                <MDBCol style={{ width: '50%', margin: 'auto' }} className='d-flex'>
+                                   <MDBCol md="6" xl="5" className="mt-xl-5 align-items-center">
+                                        <a href='#'>
+                                            <img style={{ width: '100%', padding: '8px' }}
+                                                src={applestore}
+                                                alt=""
+                                                className="img-responsive"
+                                            />
+                                        </a>
+                                    </MDBCol>
+                                    <MDBCol md="4" xl="5" className="mt-xl-5 align-items-center">
+                                        <a href='#'>
+                                            <img style={{ width: '100%' }}
+                                                src={googleplay}
+                                                alt=""
+                                                className="img-responsive"
+                                            />
+                                        </a>
+                                    </MDBCol>
+                                </MDBCol>
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBMask>
+                </MDBView>
+                <MDBContainer>
+                    <MDBRow className="py-5">
+                        <MDBCol md="12" className='d-flex'>
+                            <div className="footer-copyright py-3" md="6">
+                                <MDBContainer fluid>
+                                    <a href='/'>&copy; {new Date().getFullYear()} Copyright FCM Limited</a>
+                                </MDBContainer>
+                            </div>
+                            <div className="footer-copyright py-3 pull-right d-flex" md="6">
+                                <MDBContainer> <span><a href='#'>Term of Use</a></span><span> <a href='#'>Privacy</a></span><span> <a href="#">About Us</a></span></MDBContainer>
+                            </div>
+                        </MDBCol>
+                    </MDBRow>
+                </MDBContainer>
             </div>
         );
     }
 }
 
-export default FullPageIntroWithFixedTransparentNavbar;
+export default Index;

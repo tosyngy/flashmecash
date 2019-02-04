@@ -65,17 +65,17 @@ class DSTVPayments extends React.Component {
                                 <tr>
                                     <td colSpan='3'>Mark</td>
                                     <td>01234567890</td>
-                                    <td className='text-right'><a color="purple" onClick={this.toggleModal(12)} className='btn-link' to='/'>Renew subscription</a></td>
+                                    <td className='text-right'><a color="purple" onClick={this.toggleModal(12)} className='btn-link' href='#'>Renew subscription</a></td>
                                 </tr>
                                 <tr>
                                     <td colSpan='3'>Jacob</td>
                                     <td>01234567890</td>
-                                    <td className='text-right'><a color="purple" onClick={this.toggleModal(12)} to='/' className='btn-link'>Renew subscription</a></td>
+                                    <td className='text-right'><a color="purple" onClick={this.toggleModal(12)} href='#' className='btn-link'>Renew subscription</a></td>
                                 </tr>
                                 <tr>
                                     <td colSpan='3'>Larry</td>
                                     <td>01234567890</td>
-                                    <td className='text-right'><a color="purple" onClick={this.toggleModal(12)} to='/' className='btn-link'>Renew subscription</a></td>
+                                    <td className='text-right'><a color="purple" onClick={this.toggleModal(12)} href='#' className='btn-link'>Renew subscription</a></td>
                                 </tr>
                             </MDBTableBody>
                         </MDBTable>
