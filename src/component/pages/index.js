@@ -54,10 +54,10 @@ class Index extends Component {
                                         <MDBNavLink to="#" className='btn btn-link text-capitalize font-weight-bold'>Contact</MDBNavLink>
                                     </MDBNavItem>
                                     <MDBNavItem>
-                                        <MDBNavLink to="/login" className='btn btn-link text-capitalize font-weight-bold'>Login</MDBNavLink>
+                                        <a href="/login" className='btn btn-link text-capitalize font-weight-bold'>Login</a>
                                     </MDBNavItem>
                                     <MDBNavItem active>
-                                        <MDBNavLink to="/register" className='btn myblue text-capitalize font-weight-bold'>Sign Up</MDBNavLink>
+                                        <a href="/register" className='btn myblue text-capitalize font-weight-bold'>Sign Up</a>
                                     </MDBNavItem>
                                 </MDBNavbarNav>
                             </MDBCollapse>
@@ -107,7 +107,7 @@ class Index extends Component {
                         </MDBContainer>
                         <MDBRow style={{ padding: '5%' }}>
                             <MDBCol md="12" style={{ backgroundColor: '#eee' }} className='d-flex text-center align-items-center' >
-                                <MDBCol md="7" xl="5" className="blank-text text-center align-items-center">
+                                <MDBCol md="7" xl="5" className="blank-text text-left align-items-center">
                                     <h3 className="mb-4 mybluecolor text-left font-weight-bold">
                                         Send monney directly to bank accounts, mobile number or email addresses
                                         </h3>
@@ -134,7 +134,7 @@ class Index extends Component {
                                 />
                             </MDBCol>
                             <MDBCol md="6" xl="6" className="blank-text text-left align-items-center" style={{ padding: '5%' }}>
-                                <h3 className="mb-4 mybluecolor text-center font-weight-bold">
+                                <h3 className="mb-4 mybluecolor font-weight-bold">
                                     One stop shop for all your payment
                                         </h3>
                                 <p className='acc-label' style={{ fontSize: '18px', lineHeight: 1.5 }}>
@@ -179,12 +179,12 @@ class Index extends Component {
                 <MDBContainer>
                     <MDBRow className="py-5">
                         <MDBCol md="12" className='d-flex'>
-                            <div className="footer-copyright py-3" md="6">
+                            <div className="footer-copyright py-3 col-9" md="9">
                                 <MDBContainer fluid>
                                     <a href='/'>&copy; {new Date().getFullYear()} Copyright FCM Limited</a>
                                 </MDBContainer>
                             </div>
-                            <div className="footer-copyright py-3 pull-right d-flex" md="6">
+                            <div className="footer-copyright py-3 pull-right d-flex col-3" md="3">
                                 <MDBContainer> <span><a href='#'>Term of Use</a></span><span> <a href='#'>Privacy</a></span><span> <a href="#">About Us</a></span></MDBContainer>
                             </div>
                         </MDBCol>
