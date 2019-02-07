@@ -4,6 +4,7 @@ import {
     MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler,
     MDBCollapse, MDBMask, MDBRow, MDBCol, MDBBtn, MDBView, MDBContainer, MDBFormInline, MDBMedia
 } from "mdbreact";
+import { Link } from "react-router-dom";
 import "../css/index.css";
 import logo from '../assests/images/logo-placeholder.png';
 import mobile1 from '../assests/images/mobile1.png';
@@ -182,7 +183,7 @@ class Index extends Component {
                                     <a href='/'>&copy; {new Date().getFullYear()} Copyright FCM Limited</a>
                                 </MDBContainer>
                             </div>
-                            <div className="footer-copyright py-3 pull-right d-flex col-6" md="6">
+                            <div className="footer-copyright py-3 pull-right col-6" md="6">
                                 <MDBContainer> <span><a href='#'>Term of Use</a></span><span> <a href='#'>Privacy</a></span><span> <a href="#">About Us</a></span></MDBContainer>
                             </div>
                         </MDBCol>
@@ -190,10 +191,8 @@ class Index extends Component {
                 </MDBContainer>
                 <MDBContainer>
                     <MDBRow className="py-5">
-                        <MDBCol md="12" className='d-flex'>
-                        <MDBNavItem>
-                                    <MDBNavLink to="/main" className='btn btn-link text-capitalize font-weight-bold'>alternative to menu page</MDBNavLink>
-                                </MDBNavItem>
+                        <MDBCol md="12" className='text-center'>
+                            <Link to="/main" className='btn btn-link text-capitalize font-weight-bold'>alternative to menu page</Link>
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>

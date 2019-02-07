@@ -1,13 +1,13 @@
 {
   "main.css": "/static/css/main.74d3ce86.chunk.css",
-  "main.js": "/static/js/main.32548e44.chunk.js",
-  "main.js.map": "/static/js/main.32548e44.chunk.js.map",
+  "main.js": "/static/js/main.8f893930.chunk.js",
+  "main.js.map": "/static/js/main.8f893930.chunk.js.map",
   "static/css/1.e70dc32a.chunk.css": "/static/css/1.e70dc32a.chunk.css",
   "static/js/1.ae53525d.chunk.js": "/static/js/1.ae53525d.chunk.js",
   "static/js/1.ae53525d.chunk.js.map": "/static/js/1.ae53525d.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/media/mdb.css": "/static/media/Roboto-Regular.df7b648c.ttf",
+  "static/media/mdb.css": "/static/media/Roboto-Bold.e31fcf18.ttf",
   "static/media/logo-placeholder.png": "/static/media/logo-placeholder.2607f242.png",
   "static/media/android-app-icon.png": "/static/media/android-app-icon.db9b21a1.png",
   "static/media/apple.png": "/static/media/apple.a17fc562.png",
@@ -16,6 +16,6 @@
   "static/css/main.74d3ce86.chunk.css.map": "/static/css/main.74d3ce86.chunk.css.map",
   "static/css/1.e70dc32a.chunk.css.map": "/static/css/1.e70dc32a.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.03f824e9be7647e1e80d0c8da433d1c2.js": "/precache-manifest.03f824e9be7647e1e80d0c8da433d1c2.js",
+  "precache-manifest.2fa2f9cabfaf4f601343a8633a54ef43.js": "/precache-manifest.2fa2f9cabfaf4f601343a8633a54ef43.js",
   "service-worker.js": "/service-worker.js"
 }

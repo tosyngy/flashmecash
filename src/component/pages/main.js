@@ -29,7 +29,7 @@ class Main extends React.Component {
                     </MDBCol>
                     <MDBCol md="9" className="justify-content-around" style={{ height: '60px', padding: '50px 100px' }}>
                         <Header />
-                        {(this.props.match.params.page).length===0 && <Account />}
+                        {!(this.props.match.params.page) && <Account />}
                         {this.props.match.params.page ==='account' && <Account />}
                         {this.props.match.params.page ==='dstv-payments' && <DSTVPayments />}
                         {this.props.match.params.page ==='airtime-top-ups' && <AirtimeTopUp />}
