@@ -33,38 +33,36 @@ class Index extends Component {
         );
         return (
             <div id="apppage">
-                <Router>
-                    <div>
-                        <MDBNavbar color="bg-white" dark expand="md" scrolling transparent>
-                            <MDBNavbarBrand href="/">
-                                <MDBMedia center href="#">
-                                    <MDBMedia object center src={logo} alt={"Placeholder"} className='brand-img' />
-                                </MDBMedia>
-                            </MDBNavbarBrand>
-                            {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
-                            <MDBCollapse isOpen={this.state.collapse} navbar>
-                                <MDBNavbarNav right>
-                                    <MDBNavItem>
-                                        <MDBNavLink to="#" className='btn btn-link text-capitalize font-weight-bold'>About us</MDBNavLink>
-                                    </MDBNavItem>
-                                    <MDBNavItem>
-                                        <MDBNavLink to="#" className='btn btn-link text-capitalize font-weight-bold'>Blog</MDBNavLink>
-                                    </MDBNavItem>
-                                    <MDBNavItem>
-                                        <MDBNavLink to="#" className='btn btn-link text-capitalize font-weight-bold'>Contact</MDBNavLink>
-                                    </MDBNavItem>
-                                    <MDBNavItem>
-                                        <a href="/login" className='btn btn-link text-capitalize font-weight-bold'>Login</a>
-                                    </MDBNavItem>
-                                    <MDBNavItem active>
-                                        <a href="/register" className='btn myblue text-capitalize font-weight-bold'>Sign Up</a>
-                                    </MDBNavItem>
-                                </MDBNavbarNav>
-                            </MDBCollapse>
-                        </MDBNavbar>
-                        {this.state.collapsed && overlay}
-                    </div>
-                </Router>
+                <div>
+                    <MDBNavbar color="bg-white" dark expand="md" scrolling transparent>
+                        <MDBNavbarBrand href="/">
+                            <MDBMedia center href="#">
+                                <MDBMedia object center src={logo} alt={"Placeholder"} className='brand-img' />
+                            </MDBMedia>
+                        </MDBNavbarBrand>
+                        {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
+                        <MDBCollapse isOpen={this.state.collapse} navbar>
+                            <MDBNavbarNav right>
+                                <MDBNavItem>
+                                    <MDBNavLink to="#" className='btn btn-link text-capitalize font-weight-bold'>About us</MDBNavLink>
+                                </MDBNavItem>
+                                <MDBNavItem>
+                                    <MDBNavLink to="#" className='btn btn-link text-capitalize font-weight-bold'>Blog</MDBNavLink>
+                                </MDBNavItem>
+                                <MDBNavItem>
+                                    <MDBNavLink to="#" className='btn btn-link text-capitalize font-weight-bold'>Contact</MDBNavLink>
+                                </MDBNavItem>
+                                <MDBNavItem>
+                                    <MDBNavLink to="/login" className='btn btn-link text-capitalize font-weight-bold'>Login</MDBNavLink>
+                                </MDBNavItem>
+                                <MDBNavItem active>
+                                    <MDBNavLink to="/register" className='btn myblue text-capitalize font-weight-bold'>Sign Up</MDBNavLink>
+                                </MDBNavItem>
+                            </MDBNavbarNav>
+                        </MDBCollapse>i
+                    </MDBNavbar>
+                    {this.state.collapsed && overlay}
+                </div>
                 <MDBView>
                     <MDBMask className="justify-content-center">
                         <MDBContainer className='d-flex'>
@@ -76,14 +74,14 @@ class Index extends Component {
                                 <h5 className="mb-4 mybluecolor text-center font-weight-bold">
                                     Digital solution to all your banking needs</h5>
                                 <MDBRow>
-                                <MDBCol md="6" xl="5" className="mt-xl-5">
+                                    <MDBCol md="6" xl="5" className="mt-xl-5">
                                         <a href='#'>
                                             <img style={{ width: '100%', padding: '1%' }}
                                                 src={applestore}
                                                 alt=""
                                                 className="img-responsive"
                                             />
-                                        </a> 
+                                        </a>
                                     </MDBCol>
                                     <MDBCol md="6" xl="5" className="mt-xl-5">
                                         <a href='#'>
@@ -153,7 +151,7 @@ class Index extends Component {
                                     better bank
                                </p>
                                 <MDBCol style={{ width: '50%', margin: 'auto' }} className='d-flex'>
-                                   <MDBCol md="6" xl="5" className="mt-xl-5 align-items-center">
+                                    <MDBCol md="6" xl="5" className="mt-xl-5 align-items-center">
                                         <a href='#'>
                                             <img style={{ width: '100%', padding: '8px' }}
                                                 src={applestore}
@@ -179,12 +177,12 @@ class Index extends Component {
                 <MDBContainer>
                     <MDBRow className="py-5">
                         <MDBCol md="12" className='d-flex'>
-                            <div className="footer-copyright py-3 col-9" md="9">
+                            <div className="footer-copyright py-3 col-6" md="8">
                                 <MDBContainer fluid>
                                     <a href='/'>&copy; {new Date().getFullYear()} Copyright FCM Limited</a>
                                 </MDBContainer>
                             </div>
-                            <div className="footer-copyright py-3 pull-right d-flex col-3" md="3">
+                            <div className="footer-copyright py-3 pull-right d-flex col-6" md="4">
                                 <MDBContainer> <span><a href='#'>Term of Use</a></span><span> <a href='#'>Privacy</a></span><span> <a href="#">About Us</a></span></MDBContainer>
                             </div>
                         </MDBCol>
