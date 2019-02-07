@@ -46,13 +46,13 @@ class Cards extends React.Component {
                             </MDBCol>
                             <MDBCol md="12">
                                 <MDBRow className='d-flex'>
-                                    <div className="col-md-4">
+                                    <div className="col-md-6" style={{marginBottom:'20px'}}>
                                         <ATMTemplate />
                                     </div>
-                                    <div className="col-md-4">
+                                    <div className="col-md-6" md='6' style={{marginBottom:'20px'}}>
                                         <ATMTemplate />
-                                    </div>
-                                    <div className="col-md-4">
+                                    </div> 
+                                    <div className="col-md-6" md='6' style={{marginBottom:'20px'}}>
                                         <ATMTemplate />
                                     </div>
                                 </MDBRow>
@@ -75,7 +75,7 @@ class Cards extends React.Component {
                                 </tr>
                                 <tr>
                                     <td>Mark</td>
-                                    <td>Otto</td>
+                                    <td>Otto</td> 
                                     <td>@mdo</td>
                                 </tr>
                                 <tr>

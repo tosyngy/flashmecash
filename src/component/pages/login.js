@@ -30,7 +30,7 @@ class Login extends React.Component {
             // mode: "no-cors", // no-cors, cors, *same-origin
             headers: {
                 'content-type': 'application/json',
-                'Authorization': "eyJhbGciOiJIUzUxMiJ9.eyJjbGllbnRpZCI6InRlc3QiLCJzZWNyZXQiOiJ0ZXN0IiwiZXhwIjoxNTQ3NjM5ODQwLCJpc3MiOiJDZW50cmljIn0.lr_AgEfXCdM8clJM65Xl-5Ik49SHRI09zNsBV076QT-bUyPn29sCZhcf1SbrIlICFeEqkIrchfm80Nm2j2EdXw"
+                // 'Authorization': "eyJhbGciOiJIUzUxMiJ9.eyJjbGllbnRpZCI6InRlc3QiLCJzZWNyZXQiOiJ0ZXN0IiwiZXhwIjoxNTQ3NjM5ODQwLCJpc3MiOiJDZW50cmljIn0.lr_AgEfXCdM8clJM65Xl-5Ik49SHRI09zNsBV076QT-bUyPn29sCZhcf1SbrIlICFeEqkIrchfm80Nm2j2EdXw"
             },
             body: JSON.stringify(param),
         }

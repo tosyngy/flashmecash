@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/fa-solid-900.56404b18.svg"
   },
   {
-    "revision": "5074e5b55e1a0fb4dbb6",
+    "revision": "c950e46a10ca62659e12",
     "url": "/static/css/main.e8fbac0e.chunk.css"
   },
   {
@@ -92,8 +92,8 @@ self.__precacheManifest = [
     "url": "/static/media/fa-brands-400.c95f5f7a.svg"
   },
   {
-    "revision": "5074e5b55e1a0fb4dbb6",
-    "url": "/static/js/main.5074e5b5.chunk.js"
+    "revision": "c950e46a10ca62659e12",
+    "url": "/static/js/main.c950e46a.chunk.js"
   },
   {
     "revision": "11911410dca2de148f30954eb2fd5eab",
@@ -164,12 +164,12 @@ self.__precacheManifest = [
     "url": "/static/media/Roboto-Bold.dc81817d.woff"
   },
   {
-    "revision": "94998475f6aea65f558494802416c1cf",
-    "url": "/static/media/Roboto-Thin.94998475.ttf"
-  },
-  {
     "revision": "46e48ce0628835f68a7369d0254e4283",
     "url": "/static/media/Roboto-Light.46e48ce0.ttf"
+  },
+  {
+    "revision": "94998475f6aea65f558494802416c1cf",
+    "url": "/static/media/Roboto-Thin.94998475.ttf"
   },
   {
     "revision": "df7b648ce5356ea1ebce435b3459fd60",
@@ -184,7 +184,7 @@ self.__precacheManifest = [
     "url": "/static/css/1.e70dc32a.chunk.css"
   },
   {
-    "revision": "2b1d76387988b4f5ba6b05140c5a6392",
+    "revision": "f67cb72a0a8eef242b0a09cc88037327",
     "url": "/index.html"
   }
 ];
