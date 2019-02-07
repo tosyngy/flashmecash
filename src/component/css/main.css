@@ -61,12 +61,11 @@ li a{
 }
 .floatBTN{
     background-color: #fbcf20 !important;
-    color: #000;
+    color: #000  !important;
     border-radius: 50% !important;
-    position: fixed;
-    top: 90%;
-    left: 90%;
-    padding: 40px;
+    position: fixed  !important;
+    bottom: 10px  !important;
+    right: 10px  !important;
 }
 .add-page{
     background-color: #472864 !important;
