@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/static/media/fa-solid-900.56404b18.svg"
   },
   {
-    "revision": "b49a0a1de856acc4bdfa",
+    "revision": "32548e44fc6f884db924",
     "url": "/static/css/main.74d3ce86.chunk.css"
   },
   {
-    "revision": "e31fcf1885e371e19f5786c2bdfeae1b",
-    "url": "/static/media/Roboto-Bold.e31fcf18.ttf"
+    "revision": "df7b648ce5356ea1ebce435b3459fd60",
+    "url": "/static/media/Roboto-Regular.df7b648c.ttf"
   },
   {
     "revision": "ae53525d359292424fdc",
@@ -68,12 +68,12 @@ self.__precacheManifest = [
     "url": "/static/media/fa-solid-900.a6de637c.woff"
   },
   {
-    "revision": "c6aef942e3668158ec29d4adcb2e768f",
-    "url": "/static/media/fa-brands-400.c6aef942.ttf"
-  },
-  {
     "revision": "1010b72339fe3292aede3543e827b741",
     "url": "/static/media/fa-brands-400.1010b723.eot"
+  },
+  {
+    "revision": "c6aef942e3668158ec29d4adcb2e768f",
+    "url": "/static/media/fa-brands-400.c6aef942.ttf"
   },
   {
     "revision": "5dc39cf0aed41e1a5e9918bea7e8603d",
@@ -92,8 +92,8 @@ self.__precacheManifest = [
     "url": "/static/media/fa-brands-400.c95f5f7a.svg"
   },
   {
-    "revision": "b49a0a1de856acc4bdfa",
-    "url": "/static/js/main.b49a0a1d.chunk.js"
+    "revision": "32548e44fc6f884db924",
+    "url": "/static/js/main.32548e44.chunk.js"
   },
   {
     "revision": "11911410dca2de148f30954eb2fd5eab",
@@ -164,27 +164,27 @@ self.__precacheManifest = [
     "url": "/static/media/Roboto-Bold.dc81817d.woff"
   },
   {
-    "revision": "94998475f6aea65f558494802416c1cf",
-    "url": "/static/media/Roboto-Thin.94998475.ttf"
-  },
-  {
     "revision": "46e48ce0628835f68a7369d0254e4283",
     "url": "/static/media/Roboto-Light.46e48ce0.ttf"
   },
   {
-    "revision": "df7b648ce5356ea1ebce435b3459fd60",
-    "url": "/static/media/Roboto-Regular.df7b648c.ttf"
+    "revision": "94998475f6aea65f558494802416c1cf",
+    "url": "/static/media/Roboto-Thin.94998475.ttf"
   },
   {
     "revision": "894a2ede85a483bf9bedefd4db45cdb9",
     "url": "/static/media/Roboto-Medium.894a2ede.ttf"
   },
   {
+    "revision": "e31fcf1885e371e19f5786c2bdfeae1b",
+    "url": "/static/media/Roboto-Bold.e31fcf18.ttf"
+  },
+  {
     "revision": "ae53525d359292424fdc",
     "url": "/static/css/1.e70dc32a.chunk.css"
   },
   {
-    "revision": "55eb79f6c4d3d5bd61d3974d40186d9c",
+    "revision": "9e12eb5ab5f128ede7ecf40a2d8028ee",
     "url": "/index.html"
   }
 ];

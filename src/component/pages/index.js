@@ -59,7 +59,7 @@ class Index extends Component {
                                     <MDBNavLink to="/register" className='btn myblue text-capitalize font-weight-bold'>Sign Up</MDBNavLink>
                                 </MDBNavItem>
                             </MDBNavbarNav>
-                        </MDBCollapse>i
+                        </MDBCollapse>
                     </MDBNavbar>
                     {this.state.collapsed && overlay}
                 </div>
@@ -177,14 +177,23 @@ class Index extends Component {
                 <MDBContainer>
                     <MDBRow className="py-5">
                         <MDBCol md="12" className='d-flex'>
-                            <div className="footer-copyright py-3 col-6" md="8">
+                            <div className="footer-copyright py-3 col-6" md="6">
                                 <MDBContainer fluid>
                                     <a href='/'>&copy; {new Date().getFullYear()} Copyright FCM Limited</a>
                                 </MDBContainer>
                             </div>
-                            <div className="footer-copyright py-3 pull-right d-flex col-6" md="4">
+                            <div className="footer-copyright py-3 pull-right d-flex col-6" md="6">
                                 <MDBContainer> <span><a href='#'>Term of Use</a></span><span> <a href='#'>Privacy</a></span><span> <a href="#">About Us</a></span></MDBContainer>
                             </div>
+                        </MDBCol>
+                    </MDBRow>
+                </MDBContainer>
+                <MDBContainer>
+                    <MDBRow className="py-5">
+                        <MDBCol md="12" className='d-flex'>
+                        <MDBNavItem>
+                                    <MDBNavLink to="/main" className='btn btn-link text-capitalize font-weight-bold'>alternative to menu page</MDBNavLink>
+                                </MDBNavItem>
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>
