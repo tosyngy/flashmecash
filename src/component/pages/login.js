@@ -25,6 +25,7 @@ class Login extends React.Component {
     }
     login(e, secret, clientID) {
         e.preventDefault();
+        const cls=this;
         if (clientID.length === 0) {
             this.setState({ errErr: 'd-none' })
             this.setState({ errPwd: 'd-none' })
@@ -57,8 +58,7 @@ class Login extends React.Component {
                     this.setState({ errPwd: 'd-none' })
                     this.setState({ errUsr: 'd-none' })
                 }else{
-                    history.push('/main');
-                    window.location.reload();
+                    this.props.history.push("/main")
                 }
                 return result;
             }) 
