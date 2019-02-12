@@ -3,7 +3,6 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBMedia } from 'mdbreact';
 import '../css/form.css';
 import logo from "../assests/images/logo-placeholder.png"
 import { Link } from "react-router-dom";
-import $ from 'jquery'
 class Login extends React.Component {
     constructor(props) {
         super(props);
