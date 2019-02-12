@@ -1,7 +1,6 @@
 import React from "react";
 import {
-    MDBRow, MDBCol, MDBCard, MDBBtn, MDBIcon,
-    MDBTable, MDBTableBody
+    MDBRow, MDBCol,MDBBtn, MDBIcon
 }
     from 'mdbreact';
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";

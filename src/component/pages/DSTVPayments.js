@@ -1,12 +1,11 @@
 import React from "react";
 import {
-    MDBRow, MDBCol, MDBCard, MDBBtn, MDBIcon,
-    MDBTable, MDBTableBody, MDBCardText, MDBCardTitle, MDBTableHead,
+    MDBRow, MDBCol, MDBBtn,
+    MDBTable, MDBTableBody,
     MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter
 }
     from 'mdbreact';
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
-import { Link } from "react-router-dom";
 
 class DSTVPayments extends React.Component {
     constructor(props) {

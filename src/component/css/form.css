@@ -112,3 +112,8 @@ color: #fff}
     text-align: center  !important;
     flex: auto  !important;
 }
+.text-sm{
+    font-size: 10px !important;
+    text-align: center  !important;
+    flex: auto  !important;
+}

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import {
     MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler,
-    MDBCollapse, MDBMask, MDBRow, MDBCol, MDBBtn, MDBView, MDBContainer, MDBFormInline, MDBMedia
+    MDBCollapse, MDBMask, MDBRow, MDBCol, MDBView, MDBContainer, MDBMedia
 } from "mdbreact";
 import { Link } from "react-router-dom";
 import "../css/index.css";

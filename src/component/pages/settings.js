@@ -1,11 +1,10 @@
 import React from "react";
 import {
-    MDBRow, MDBCol, MDBCard, MDBBtn, MDBIcon,
+    MDBRow, MDBCol, MDBBtn,
     MDBTable, MDBTableBody
 }
     from 'mdbreact';
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
-import ATMTemplate from './gadget/ATMTemplate'
 
 class Settings extends React.Component {
     constructor(props) {

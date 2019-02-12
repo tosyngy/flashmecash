@@ -2,8 +2,7 @@ import React from "react";
 import {
     MDBRow, MDBCol, MDBCard, MDBBtn, MDBIcon,
     MDBTable, MDBTableBody, MDBCardText, MDBCardTitle, MDBTableHead,
-    MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, Link, MDBSelect, MDBSelectOption, MDBSelectInput, MDBSelectOptions,
-}
+    MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter}
     from 'mdbreact';
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import { Line } from "react-chartjs-2";
