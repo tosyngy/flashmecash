@@ -3,23 +3,23 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBMedia } from 'mdbreact';
 import '../css/form.css';
 import logo from "../assests/images/logo-placeholder.png"
 import { Link } from "react-router-dom";
-
+import $ from 'jquery'
 class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             collapse: false,
-            email: '',
+            username: '',
             password: ''
         };
     }
     handleUsername(e) {
-        this.setState({ email: e.target.value })
+        this.setState({ username: e.target.value })
     }
     handlePassword(e) {
         this.setState({ password: e.target.value })
     }
-    login = async (secret, clientID) => {
+    login(secret, clientID) {
         let url = 'https://staging.seerbitapigateway.com/FCMB_BACK/rest/api/oauth';
         let param = {
             clientID,
@@ -27,7 +27,6 @@ class Login extends React.Component {
         };
         const options = {
             method: 'POST',
-            // mode: "no-cors", // no-cors, cors, *same-origin
             headers: {
                 'content-type': 'application/json',
                 // 'Authorization': "eyJhbGciOiJIUzUxMiJ9.eyJjbGllbnRpZCI6InRlc3QiLCJzZWNyZXQiOiJ0ZXN0IiwiZXhwIjoxNTQ3NjM5ODQwLCJpc3MiOiJDZW50cmljIn0.lr_AgEfXCdM8clJM65Xl-5Ik49SHRI09zNsBV076QT-bUyPn29sCZhcf1SbrIlICFeEqkIrchfm80Nm2j2EdXw"
@@ -35,7 +34,7 @@ class Login extends React.Component {
             body: JSON.stringify(param),
         }
         fetch(url, options)
-            // .then((response) => response.json())
+            .then((response) => response.json())
             .then(result => {
                 console.log(result)
                 return result;
@@ -59,7 +58,7 @@ class Login extends React.Component {
                                         </MDBMedia>
                                     </p>
                                     <input
-                                        type="email"
+                                        type="text"
                                         id="defaultFormLoginEmailEx"
                                         className="form-control"
                                         placeholder='Phone Number'
@@ -77,7 +76,7 @@ class Login extends React.Component {
                                     />
                                     <br />
                                     <div className="text-center">
-                                        <MDBBtn color="purple" type="button" className='largeInput gold-color myblue' onClick={()=>this.login(this.state.username, this.state.password)}>Login to your account</MDBBtn>
+                                        <MDBBtn color="purple" type="button" className='largeInput gold-color myblue' onClick={() => this.login(this.state.username, this.state.password)}>Login to your account</MDBBtn>
                                     </div>
                                     <div className="form-group text-center ">
                                         <a href="/">Forgot your Password?</a>
