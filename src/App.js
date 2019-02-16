@@ -35,7 +35,6 @@ const ConfigRouter = () => (
         <Route path='/main/:page' component={Main} />
         <Route path='/main' component={Main} />
         <Route path='/' component={Main} />
-        <Route path='/new-wallet' component={NewWallet} />
         <Route path='/signup' component={SignUp} />
         <Route path='/signup-2' component={SignUp2} />
         <Route component={NotFound} />
@@ -45,6 +44,7 @@ const ConfigRouter = () => (
         <Route exact path='/' component={Index} />
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
+        <Route path='/new-wallet' component={NewWallet} />
         <Route path='/registration-option' component={RegistrationOption} />
         <Route path='/signup' component={SignUp} />
         <Route path='/signup-2' component={SignUp2} />
