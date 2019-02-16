@@ -2,18 +2,29 @@ import React from "react";
 import {
     MDBRow, MDBCol, MDBCard, MDBBtn, MDBIcon,
     MDBTable, MDBTableBody, MDBCardText, MDBCardTitle, MDBTableHead,
-    MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter}
+    MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBAlert
+}
     from 'mdbreact';
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import { Line } from "react-chartjs-2";
+import AuthService from '../AuthService.js'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Account extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            transferData: [],
             collapse: false,
             selectedIndex: 0,
             modal12: false,
+            amount: '0',
+            reciever: '',
+            name: '',
+            narration: '',
+            errTrans: 'd-none',
+            errText: '',
             dataLine: {
                 labels: ["January", "February", "March", "April", "May", "June", "July"],
                 datasets: [
@@ -63,6 +74,19 @@ class Account extends React.Component {
             }
         };
     }
+
+    handleName(e) {
+        this.setState({ name: e.target.value })
+    }
+    handleAmount(e) {
+        this.setState({ amount: e.target.value })
+    }
+    handleReciever(e) {
+        this.setState({ reciever: e.target.value })
+    }
+    handleNarration(e) {
+        this.setState({ narration: e.target.value })
+    }
     handleSelect = index => {
         this.setState({ selectedIndex: index });
     };
@@ -70,7 +94,7 @@ class Account extends React.Component {
     handleButtonClick = () => {
         this.setState({ selectedIndex: 0 });
     };
-    toggleModal = (nr,nc=0) => () => {
+    toggleModal = (nr, nc = 0) => () => {
         let modalNumberClose = 'modal' + nc
         this.setState({
             [modalNumberClose]: false
@@ -82,17 +106,114 @@ class Account extends React.Component {
         });
 
     }
+    fetchDetails = (token) => {
+        if (AuthService.isTokenExpired(AuthService.getToken())) {
+            alert('SESSION expired please login')
+            this.props.history.push("/login")
+        }
 
+        let url = 'https://staging.seerbitapigateway.com/FCMB_BACK/rest/api/transaction/getSendMoneyByMail?page=1&pageSize=5';
+        const options = {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': token
+            },
+            body: JSON.stringify({ mobilePhone: '2347053191016' }),
+        }
+        fetch(url, options)
+            .then((response) => response.json())
+            .then(result => {
+                console.log(result)
+                this.setState({ transferData: result })
+            })
+            .catch(err => {
+                throw err;
+            });
+    }
+    errHandler = ({ ...param }) => {
+        for (let i in param) {
+            if (param[i]=="" || param[i]==0)
+                return `${this.toDash(i)} is required !`;
+        }
+        return false;
+    }
+    toDash = function(i){
+        return i.replace(/([A-Z])/g, function($1){return " "+$1.toLowerCase();});
+    };
+
+    sendMoney = (e, amount, recieverEmail, name, narration) => {
+        if (AuthService.isTokenExpired(AuthService.getToken())) {
+            alert('SESSION expired please login')
+            this.props.history.push("/login")
+        }
+        e.preventDefault();
+        var validate=this.errHandler({ amount, recieverEmail, name, narration });
+        if (validate) {
+            toast.warn(validate, {
+                position: toast.POSITION.TOP_RIGHT
+            });
+            return 0;
+        }
+
+        let url = 'https://staging.seerbitapigateway.com/FCMB_BACK/rest/api/transaction/sendMoneyByMAil';
+        let param = {
+            "mobilePhone": "2347053191016", //based on sender registration
+            "senderEmail": "test@test.com",  //based on sender registration
+            recieverEmail,
+            amount,
+            narration,
+        };
+        const options = {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': AuthService.getToken()
+            },
+            body: JSON.stringify(param),
+        }
+        fetch(url, options)
+            .then((response) => response.json())
+            .then(result => {
+                if (result.response !== undefined) {
+                    toast.error("Error Request !!!", {
+                        position: toast.POSITION.TOP_RIGHT
+                    });
+                } else {
+                    this.toggleModal(14)
+                    toast.success("Transaction Successful !", {
+                        position: toast.POSITION.TOP_CENTER
+                    });
+                  }
+                return result;
+            })
+            .catch(err => {
+                throw err;
+            });
+    }
+    componentDidMount = () => {
+        this.fetchDetails(AuthService.getToken());
+    }
     render() {
+        let rows = this.state.transferData.map(row => {
+            return <PersonRow key={
+                row.id
+            }
+                data={
+                    row
+                }
+            />
+        })
         return (
             <MDBRow size='12' className="table-tab" >
+                <ToastContainer autoClose={5000} />
                 <Tabs style={{ width: '100%' }}
                     selectedIndex={this.state.selectedIndex}
                     onSelect={this.handleSelect}
                 >
                     <TabList>
                         <Tab style={{ color: '#472864', 'font-size': '16px', 'font-weight': '900' }} >Account</Tab>
-                        <Tab style={{ color: '#472864', 'font-size': '16px', 'font-weight': '900' }}>Summary</Tab>
+                        <Tab style={{ color: '#472864', 'font-size': '16px', 'font-weight': '900' }}>Transfer</Tab>
                         <Tab style={{ color: '#472864', 'font-size': '16px', 'font-weight': '900' }}>Beneficiary</Tab>
                     </TabList>
 
@@ -145,7 +266,7 @@ class Account extends React.Component {
                         <MDBTable fluid>
                             <MDBTableHead>
                                 <tr>
-                                    <td colSpan='3'>5 Transfer</td>
+                                    <td colSpan='3'>{rows.length} Transfer</td>
                                     <td colSpan='3'>
                                         <MDBBtn flat size="sm" className='add-page' onClick={this.toggleModal(14)}>Send Money</MDBBtn>
                                         <MDBBtn flat size="sm" className='add-page white' style={{ width: '200px' }}><MDBIcon icon="filter" className="mr-2" />filter transaction</MDBBtn>
@@ -160,34 +281,7 @@ class Account extends React.Component {
                                 </tr>
                             </MDBTableHead>
                             <MDBTableBody>
-                                <tr>
-                                    <td><span className="dot circledot">OS</span></td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td colSpan='2'>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td><span className="dot circledot">OS</span></td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td colSpan='2'>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td><span className="dot circledot">OS</span></td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td colSpan='2'>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td><span className="dot circledot">OS</span></td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                    <td colSpan='2'>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
+                                {rows}
                             </MDBTableBody>
                         </MDBTable>
                     </TabPanel>
@@ -234,54 +328,68 @@ class Account extends React.Component {
                     </TabPanel>
                 </Tabs>
                 <MDBModal isOpen={this.state.modal14} toggle={this.toggleModal(14)} centered>
-                    <MDBModalHeader toggle={this.toggleModal(14)} className='modal-head'>Send Money</MDBModalHeader>
-                    <MDBModalBody>
-                        <MDBRow md="12">
-                            <MDBCol md="12" style={{ textAlign: 'left' }}>
-                                <label className='reg-input'>How much do you want to send?</label>
-                                <input
-                                    type="currency"
-                                    id="defaultFormSendMoneyAmountEx"
-                                    className="form-control"
-                                    placeholder='Amount'
-                                />
-                            </MDBCol>
-                            <MDBCol md="12" style={{ textAlign: 'left' }}>
-                                <label className='reg-input'>Send to?</label><br />
-                                <input
-                                    type="text"
-                                    id="defaultFormSendMoneyRecieverIDEx"
-                                    className="form-control"
-                                    placeholder='Email, Phone No or Account no'
-                                />
-                            </MDBCol>
-                            <MDBCol md="12" style={{ textAlign: 'left' }}>
-                                <label className='reg-input'>Reciever's Name</label><br />
-                                <input
-                                    type="text"
-                                    id="defaultFormSendMoneyNameEx"
-                                    className="form-control"
-                                    placeholder="Name"
-                                />
-                            </MDBCol>
-                            <MDBCol className='text-center'>
-                                <u>Or select existing beneficiary</u>
-                            </MDBCol>
-                            <MDBCol md="12" style={{ textAlign: 'left' }}>
-                                <label className='reg-input'>Narration</label><br />
-                                <input
-                                    type="text"
-                                    id="defaultFormSendMoneyNarrationEx"
-                                    className="form-control"
-                                    placeholder='Last name'
-                                />
-                            </MDBCol>
-                        </MDBRow>
-                    </MDBModalBody>
-                    <MDBModalFooter>
-                        <MDBBtn color="white" onClick={this.toggleModal(14)}>Cancel</MDBBtn>
-                        <MDBBtn color="primary" onClick={this.toggleModal(13,14)}>Send Money</MDBBtn>
-                    </MDBModalFooter>
+                    <form onSubmit={(e) => { this.sendMoney(e, this.state.amount, this.state.reciever, this.state.name, this.state.narration) }}>
+                        <MDBModalHeader toggle={this.toggleModal(14)} className='modal-head'>Send Money</MDBModalHeader>
+                        <MDBModalBody>
+                            <MDBRow md="12">
+                                <MDBAlert color="warning" className={this.state.errTrans}>
+                                    <span className='close' style={{ fontSize: '12px', color: 'warning' }} onClick={() => this.setState({ errErr: 'd-none' })}>x</span>
+                                    <strong style={{ fontSize: '12px', color: 'red' }}>{this.errText}</strong>
+                                </MDBAlert>
+                                <MDBCol md="12" style={{ textAlign: 'left' }}>
+                                    <label className='reg-input'>How much do you want to send?</label>
+                                    <input
+                                        type="currency"
+                                        className="form-control"
+                                        placeholder='Amount'
+
+                                        onChange={this.handleAmount.bind(this)}
+                                        value={this.state.amount}
+                                    />
+
+                                </MDBCol>
+                                <MDBCol md="12" style={{ textAlign: 'left' }}>
+                                    <label className='reg-input'>Send to?</label><br />
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder='Email, Phone No or Account no'
+
+                                        onChange={this.handleReciever.bind(this)}
+                                        value={this.state.reciever}
+                                    />
+                                </MDBCol>
+                                <MDBCol md="12" style={{ textAlign: 'left' }}>
+                                    <label className='reg-input'>Reciever's Name</label><br />
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder="Name"
+
+                                        onChange={this.handleName.bind(this)}
+                                        value={this.state.name}
+                                    />
+                                </MDBCol>
+                                <MDBCol className='text-center'>
+                                    <u>Or select existing beneficiary</u>
+                                </MDBCol>
+                                <MDBCol md="12" style={{ textAlign: 'left' }}>
+                                    <label className='reg-input'>Narration</label><br />
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder='Description'
+                                        onChange={this.handleNarration.bind(this)}
+                                        value={this.state.narration}
+                                    />
+                                </MDBCol>
+                            </MDBRow>
+                        </MDBModalBody>
+                        <MDBModalFooter>
+                            <MDBBtn color="white" onClick={this.toggleModal(14)}>Cancel</MDBBtn>
+                            <MDBBtn color="primary" type='submit'>Send Money</MDBBtn>
+                        </MDBModalFooter>
+                    </form>
                 </MDBModal>
                 <MDBModal isOpen={this.state.modal13} toggle={this.toggleModal(13)} centered>
                     <MDBModalHeader toggle={this.toggleModal(13)} className='modal-head'>Send Money</MDBModalHeader>
@@ -333,20 +441,6 @@ class Account extends React.Component {
                                 <select className='form-control' value={this.state.value} onChange={this.handleChange}>
                                     <option value="FCMB">0902562562(FCMB)</option>
                                 </select>
-                                {/* <input
-                                    type="select"
-                                    id="defaultFormBankNameEx"
-                                    className="form-control"
-                                    placeholder='Bank Name'
-                                /> */}
-
-                                {/* <MDBSelect color="primary">
-                                    <MDBSelectInput selected="Choose your option" />
-                                    <MDBSelectOptions>
-                                        <MDBSelectOption disabled>Choose your option</MDBSelectOption>
-                                        <MDBSelectOption value="1">FCMB</MDBSelectOption>
-                                    </MDBSelectOptions>
-                                </MDBSelect> */}
                             </MDBCol>
                         </MDBRow>
                     </MDBModalBody>
@@ -360,5 +454,18 @@ class Account extends React.Component {
         );
     }
 };
+
+
+const PersonRow = (props) => {
+    return (
+        <tr>
+            <td><span className="dot circledot">OS</span></td>
+            <td>{props.data.firstName} {props.data.lastName}</td>
+            <td>{props.data.amount}</td>
+            <td colSpan='2'>{props.data.narration}</td>
+            <td style={{ textAlign: 'right' }}> {props.data.transactionDate}</td>
+        </tr>
+    );
+}
 
 export default Account;

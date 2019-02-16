@@ -25,16 +25,16 @@ class Main extends React.Component {
             <MDBContainer fluid>
                 <MDBRow>
                     <MDBCol md="3"> 
-                        <SideBar onLoad={SideBar.getSetter(this.props.match.params.page)}/>
+                        <SideBar history={this.props.history} onLoad={SideBar.getSetter(this.props.match.params.page)}/>
                     </MDBCol>
                     <MDBCol md="9" className="justify-content-around" style={{ height: '60px', padding: '50px 100px' }}>
                         <Header />
-                        {!(this.props.match.params.page) && <Account />}
-                        {this.props.match.params.page ==='account' && <Account />}
-                        {this.props.match.params.page ==='dstv-payments' && <DSTVPayments />}
-                        {this.props.match.params.page ==='airtime-top-ups' && <AirtimeTopUp />}
-                        {this.props.match.params.page ==='settings' && <Settings />}
-                        {this.props.match.params.page ==='cards' && <Cards />}
+                        {!(this.props.match.params.page) && <Account history={this.props.history}/>}
+                        {this.props.match.params.page ==='account' && <Account history={this.props.history}/>}
+                        {this.props.match.params.page ==='dstv-payments' && <DSTVPayments history={this.props.history}/>}
+                        {this.props.match.params.page ==='airtime-top-ups' && <AirtimeTopUp history={this.props.history}/>}
+                        {this.props.match.params.page ==='settings' && <Settings history={this.props.history}/>}
+                        {this.props.match.params.page ==='cards' && <Cards history={this.props.history}/>}
                     </MDBCol>
                 </MDBRow>
                 <MDBBtn size="lg" color='yellow' className='floatBTN' icon='300px'><MDBIcon icon="comments" style={{

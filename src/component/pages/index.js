@@ -189,13 +189,6 @@ class Index extends Component {
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>
-                <MDBContainer>
-                    <MDBRow className="py-5">
-                        <MDBCol md="12" className='text-center'>
-                            <Link to="/main" className='btn btn-link text-capitalize font-weight-bold'>alternative to menu page</Link>
-                        </MDBCol>
-                    </MDBRow>
-                </MDBContainer>
             </div>
         );
     }

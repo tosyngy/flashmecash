@@ -39,12 +39,12 @@ class RegistrationOption extends React.Component {
                                     <MDBRow md="12">
                                         <MDBCol md="6" style={{ textAlign: 'left' }}>
                                             <div className="text-center">
-                                                <MDBBtn color="purple" type="submit" className='largeInput gold-color'>Create New Wallet</MDBBtn>
+                                                <MDBBtn color="purple" type="submit" className='largeInput gold-color' onClick={()=>this.props.history.push("/new-wallet")}>Create New Wallet</MDBBtn>
                                             </div>
                                         </MDBCol>
                                         <MDBCol md="6" style={{ textAlign: 'left' }}>
                                             <div className="text-center">
-                                                <MDBBtn color="dark" type="submit" className='largeInput gold-color'>Use Existing Bank Account</MDBBtn>
+                                                <MDBBtn color="dark" type="submit" className='largeInput gold-color' onClick={()=>this.props.history.push("/signup-2")}>Use Existing Bank Account</MDBBtn>
                                             </div>
                                         </MDBCol>
                                     </MDBRow>

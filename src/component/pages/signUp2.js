@@ -11,6 +11,9 @@ class SignUp2 extends React.Component {
             collapse: false,
         };
     }
+    handleSelect = index => {
+        this.setState({ selectedIndex: index });
+    };
     render() {
         return ( 
             <div className="App">
@@ -30,32 +33,25 @@ class SignUp2 extends React.Component {
                                         </p>
                                     </p>
                                     <form style={{ textAlign: "left" }}>
-                                        <label className='reg-input'>Mobile Number</label>
+                                        <label className='reg-input'>Choose your financial institution</label>
+                                        <select className='form-control' value={this.state.value} onChange={this.handleChange}>
+                                        <option value="FCMB">FCMB</option>
+                                    </select>
+                                        <label className='reg-input'>Enter Account Number</label>
                                         <input
-                                            type="email"
-                                            id="defaultFormLoginEmailEx"
-                                            className="form-control"
-                                            placeholder='Mobile No'
-                                        />
-                                        <label className='reg-input'>Enter Password</label>
-                                        <input
-                                            type="password"
-                                            id="defaultFormLoginPasswordEx"
+                                            type="Text"
                                             className="form-control actionColor"
-                                            placeholder='Password'
+                                            placeholder='Account Number'
                                         />
-                                        <label className='reg-input'>Confirm Password</label>
-
-                                        <input
-                                            type="password"
-                                            id="defaultFormLoginPassword2Ex"
-                                            className="form-control actionColor"
-                                            placeholder='Confirm Password'
-                                        />
-                                        <br />
                                         <span className='text-big'>
                                                 Hecfgfe
-                                        </span>
+                                        </span><br />
+                                        <label className='reg-input'>Enter Code</label>
+                                        <input
+                                            type="text"
+                                            className="form-control actionColor"
+                                            placeholder='Code'
+                                        />
                                         <br />
                                     <div className="text-center">
                                         <MDBBtn color="secondary-color-dark"  type="button" className='large gold-color myblue font-md gold-color' style={{ minWidth: '100%'}}>Continue</MDBBtn>
