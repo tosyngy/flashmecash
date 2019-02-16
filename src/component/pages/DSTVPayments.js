@@ -7,7 +7,9 @@ import {
     from 'mdbreact';
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 
+ // eslint-disable-next-line 
 class DSTVPayments extends React.Component {
+   
     constructor(props) {
         super(props);
         this.state = {
@@ -50,13 +52,6 @@ class DSTVPayments extends React.Component {
 
                     <TabPanel>
                         <MDBTable fluid>
-                            {/* <MDBTableHead>
-                                            <tr>
-                                                <th>First</th>
-                                                <th>Last</th>
-                                                <th>Handle</th>
-                                            </tr>
-                                        </MDBTableHead> */}
                             <MDBTableBody>
                                 <tr>
                                     <td colSpan='5' className='text-bold'>5 Accounts</td>
@@ -64,16 +59,19 @@ class DSTVPayments extends React.Component {
                                 <tr>
                                     <td colSpan='3'>Mark</td>
                                     <td>01234567890</td>
+                                     {/* eslint-disable-next-line */}
                                     <td className='text-right'><a color="purple" onClick={this.toggleModal(12)} className='btn-link' href='#'>Renew subscription</a></td>
                                 </tr>
                                 <tr>
                                     <td colSpan='3'>Jacob</td>
                                     <td>01234567890</td>
+                                     {/* eslint-disable-next-line */}
                                     <td className='text-right'><a color="purple" onClick={this.toggleModal(12)} href='#' className='btn-link'>Renew subscription</a></td>
                                 </tr>
                                 <tr>
                                     <td colSpan='3'>Larry</td>
                                     <td>01234567890</td>
+                                     {/* eslint-disable-next-line */}
                                     <td className='text-right'><a color="purple" onClick={this.toggleModal(12)} href='#' className='btn-link'>Renew subscription</a></td>
                                 </tr>
                             </MDBTableBody>
@@ -81,86 +79,11 @@ class DSTVPayments extends React.Component {
                     </TabPanel>
                     <TabPanel>
                        Summary displays here
-                        {/* <MDBTable fluid>
-                            <MDBTableHead>
-                                <tr>
-                                    <td colSpan='3'>5 Transfer</td>
-                                    <td colSpan='3'>
-                                        <MDBBtn flat size="sm" className='add-page'>Send Money</MDBBtn>
-                                        <MDBBtn flat size="sm" className='add-page white' style={{ width: '200px' }}><MDBIcon icon="filter" className="mr-2" />filter transaction</MDBBtn>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <th>Reciepient</th>
-                                    <th>Amount</th>
-                                    <th colSpan='2'>Description</th>
-                                    <th></th>
-                                </tr>
-                            </MDBTableHead>
-                            <MDBTableBody>
-                                <tr>
-                                    <td><span className="dot circledot">OS</span></td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td colSpan='2'>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td><span className="dot circledot">OS</span></td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td colSpan='2'>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td><span className="dot circledot">OS</span></td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td colSpan='2'>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td><span className="dot circledot">OS</span></td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                    <td colSpan='2'>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                            </MDBTableBody>
-                        </MDBTable> */}
+                      
                     </TabPanel>
                     <TabPanel>
                     Transaction displays here
-                        {/* <MDBTable fluid>
-                             <MDBTableHead>
-                                            <tr>
-                                                <th>First</th>
-                                                <th>Last</th>
-                                                <th>Handle</th>
-                                            </tr>
-                                        </MDBTableHead> *
-                            <MDBTableBody>
-                                <tr>
-                                    <td colSpan='3'>5 Accounts</td>
-                                </tr>
-                                <tr>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                            </MDBTableBody>
-                        </MDBTable> */}
+                       
                     </TabPanel>
                     <MDBModal isOpen={this.state.modal12} toggle={this.toggleModal(12)} centered>
                         <MDBModalHeader toggle={this.toggleModal(12)} className='modal-head'>RENEW SUSCRIPTION</MDBModalHeader>
@@ -190,19 +113,6 @@ class DSTVPayments extends React.Component {
                                     <select className='form-control' value={this.state.value} onChange={this.handleChange}>
                                         <option value="FCMB">FCMB</option>
                                     </select>
-                                    {/* <input
-                                        type="select"
-                                        id="defaultFormBankNameEx"
-                                        className="form-control"
-                                        placeholder='Bank Name'
-                                    /> */}
-                                    {/* <MDBSelect color="primary">
-                                        <MDBSelectInput selected="Choose your option" />
-                                        <MDBSelectOptions>
-                                            <MDBSelectOption disabled>Choose your option</MDBSelectOption>
-                                            <MDBSelectOption value="1">FCMB</MDBSelectOption>
-                                        </MDBSelectOptions>
-                                    </MDBSelect> */}
                                 </MDBCol>
                                 <br />
                                 <p></p>

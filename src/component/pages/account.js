@@ -133,7 +133,7 @@ class Account extends React.Component {
     }
     errHandler = ({ ...param }) => {
         for (let i in param) {
-            if (param[i]=="" || param[i]==0)
+            if (param[i]==="" || param[i]===0)
                 return `${this.toDash(i)} is required !`;
         }
         return false;

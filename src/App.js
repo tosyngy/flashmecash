@@ -10,7 +10,7 @@ import SignUp2 from './component/pages/signUp2';
 import Index from './component/pages';
 import NewWallet from './component/pages/newWallet';
 import NotFound from './component/pages/notFound';
-import { ToastContainer, toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Offline, Online } from "react-detect-offline";
 import AuthService from './component/AuthService';
@@ -20,7 +20,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        {/* <ToastContainer autoClose={5000} /> */}
         <Online onChange={(value) => { if (value) toast.success("You are now Connection !!!", { position: toast.POSITION.TOP_CENTER }) }}></Online>
         <Offline onChange={(value) => { if (!value) toast.warn("Not Internet Connection !!!", { position: toast.POSITION.TOP_CENTER }) }}></Offline>
         <ConfigRouter />

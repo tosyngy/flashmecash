@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
 import {
     MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler,
     MDBCollapse, MDBMask, MDBRow, MDBCol, MDBView, MDBContainer, MDBMedia
 } from "mdbreact";
-import { Link } from "react-router-dom";
 import "../css/index.css";
 import logo from '../assests/images/logo-placeholder.png';
 import mobile1 from '../assests/images/mobile1.png';
@@ -24,7 +22,6 @@ class Index extends Component {
     };
 
     render() {
-        const navStyle = { marginTop: "4rem" };
         const overlay = (
             <div
                 id="sidenav-overlay"
@@ -76,6 +73,7 @@ class Index extends Component {
                                     Digital solution to all your banking needs</h5>
                                 <MDBRow>
                                     <MDBCol md="6" xl="5" className="mt-xl-5">
+                                    {/* eslint-disable-next-line */}
                                         <a href='#'>
                                             <img style={{ width: '100%', padding: '1%' }}
                                                 src={applestore}
@@ -85,6 +83,7 @@ class Index extends Component {
                                         </a>
                                     </MDBCol>
                                     <MDBCol md="6" xl="5" className="mt-xl-5">
+                                     {/* eslint-disable-next-line */}
                                         <a href='#'>
                                             <img style={{ width: '100%' }}
                                                 src={googleplay}
@@ -153,6 +152,7 @@ class Index extends Component {
                                </p>
                                 <MDBCol style={{ width: '50%', margin: 'auto' }} className='d-flex'>
                                     <MDBCol md="6" xl="5" className="mt-xl-5 align-items-center">
+                                     {/* eslint-disable-next-line */}
                                         <a href='#'>
                                             <img style={{ width: '100%', padding: '8px' }}
                                                 src={applestore}
@@ -162,6 +162,7 @@ class Index extends Component {
                                         </a>
                                     </MDBCol>
                                     <MDBCol md="4" xl="5" className="mt-xl-5 align-items-center">
+                                     {/* eslint-disable-next-line */}
                                         <a href='#'>
                                             <img style={{ width: '100%' }}
                                                 src={googleplay}
@@ -184,6 +185,7 @@ class Index extends Component {
                                 </MDBContainer>
                             </div>
                             <div className="footer-copyright py-3 pull-right col-6" md="6">
+                             {/* eslint-disable-next-line */}
                                 <MDBContainer> <span><a href='#'>Term of Use</a></span><span> <a href='#'>Privacy</a></span><span> <a href="#">About Us</a></span></MDBContainer>
                             </div>
                         </MDBCol>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PageNotFound from '../assests/images/not-found.png';
 const NotFound = () => (
 <div className='center'>
-<img src={PageNotFound} style={{width: 400, height: 400, display: 'block', margin: 'auto', position: 'relative' }} />
+<img src={PageNotFound} style={{width: 400, height: 400, display: 'block', margin: 'auto', position: 'relative' }} alt='Error 404'/>
 <center><Link to="/">Return to Home Page</Link></center>
 </div>
 );

@@ -47,7 +47,6 @@ export default class AuthService {
     getProfile() {
         // Using jwt-decode npm package to decode the token
         return decode(this.getToken());
-        this.props.history.push("/login")
     }
 
     _checkStatus(response) {
